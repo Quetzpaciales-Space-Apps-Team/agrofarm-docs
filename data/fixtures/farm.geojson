@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-90.4512, 14.6521],
+            [-90.4512, 14.6515],
+            [-90.4505, 14.6515],
+            [-90.4505, 14.6521],
+            [-90.4512, 14.6521]
+          ]
+        ]
+      },
+      "properties": {
+        "parcel_id": "FCA-GUA-001",
+        "name": "Provisional shaded coffee plot near Canalitos, Guatemala City",
+        "current_crop": "arabica_coffee",
+        "current_system": "Shaded coffee; black beans used as a cover crop during renovation",
+        "area_ha": 0.5,
+        "provisional": true,
+        "boundary_source": "Team-proposed coordinates; field boundary not surveyed",
+        "notes": "Area is approximate from the supplied ring; crop system and parcel boundary need local confirmation."
+      }
+    }
+  ]
+}

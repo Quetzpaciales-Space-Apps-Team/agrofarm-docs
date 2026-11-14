@@ -11,7 +11,7 @@ AI coding assistants were used as tools to write and review code, tests, CI work
 | Tool | Model | Used by | Used for |
 |---|---|---|---|
 | Claude Code | `claude-fable-5-2` | `eldmark` | Repository rules, CI, scaffolds, connectors, tests, documentation, data analysis |
-| OpenAI Codex | `GPT-6` | `eldmark` | Dataset ownership handoff, demo credential removal, model-status corrections and submission documentation |
+| OpenAI Codex | `GPT-6` | `eldmark` | Dataset ownership handoff, provisional geometry formatting and area checks, demo credential removal, model-status corrections and submission documentation |
 
 Team members who used another tool add a row here in their next pull request (rule G11.3).
 

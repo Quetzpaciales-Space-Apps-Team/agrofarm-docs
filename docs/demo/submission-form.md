@@ -22,13 +22,14 @@ Smallholder farmers in Guatemala face increasing rainfall variability and El Ni�
 **Human-in-the-loop principle:** AgroFarm explicitly states on every recommendation that it supports decisions and does not replace farmers or local agronomists.
 
 ## NASA Data Used
-- **NASA POWER (Agroclimatology):** Referenced in scenario and recommendation provenance metadata (`nasa_power`) and documented in the project dataset catalog (`docs/data/datasets.md`) for solar radiation, temperature, precipitation, humidity, and wind baselines.
-- **Cataloged NASA Earth Observation datasets in `docs/data/datasets.md` (architecture & planned ingestion):** SMAP L4 (soil moisture), MODIS (MOD13Q1 NDVI/EVI, MOD11A2 LST, MOD15A2H LAI, MOD17A2H GPP), HLS / Sentinel-2, GPM IMERG, ECOSTRESS, and NASADEM. *(Note: in the current MVP build, `core-api` serves deterministic fixtures and cached offline demo snapshots for satellite-derived inputs while `agrofarm-analytic` connectors are being completed.)*
+- **Current Demo Reality (`DEMO_MODE=true` / `ML_MODE=fixture`):** In the live hackathon demo, `core-api` serves deterministic offline snapshots (`cached_demo`) and fixtures that carry `nasa_power` / `insivumeh_daily` / `enso_monthly` provenance metadata while the `agrofarm-analytic` `ml-service` HTTP endpoints (`docs/contract/ml-service-expected.yaml`) are wired in.
+- **Cataloged NASA Earth Observation datasets (`docs/data/datasets.md`, planned pipeline):** NASA POWER (agroclimatology), SMAP L4 (soil moisture), MODIS (MOD13Q1, MOD11A2, MOD15A2H, MOD17A2H), HLS / Sentinel-2, GPM IMERG, ECOSTRESS, and NASADEM.
 
-## Space Agency / Partner / Other Data Used
-- **NOAA Climate Prediction Center (CPC):** Oceanic Niño Index (ONI) and Relative Oceanic Niño Index (RONI) via the `agrofarm-analytic` ENSO connector (`enso.py`) and `GET /v1/climate/enso`.
-- **INSIVUMEH (Guatemala National Institute of Seismology, Volcanology, Meteorology, and Hydrology):** Local daily meteorological station data via the `agrofarm-analytic` INSIVUMEH connector (`insivumeh.py`) and demo evidence snapshots.
-- **User-Provided Farm Data:** Parcel boundaries (GeoJSON) and field/climate observations (CSV/GeoJSON) uploaded through `POST /v1/farms/{farm_id}/uploads`.
+## Space Agency / Partner / Other Data & SI Units Used
+- **NOAA Climate Prediction Center (CPC):** Oceanic Niño Index (ONI) and Relative Oceanic Niño Index (RONI) via the `agrofarm-analytic` ENSO connector (`enso.py`) and cached demo snapshots (`GET /v1/climate/enso`).
+- **INSIVUMEH (Guatemala):** Local daily meteorological station connector (`insivumeh.py` in `agrofarm-analytic`, converting `-99.9` sentinels to `null`) and demo evidence snapshots.
+- **User-Provided Farm Data:** Parcel boundaries (`EPSG:4326` GeoJSON) and field observations (CSV/GeoJSON) validated by `POST /v1/farms/{farm_id}/uploads`.
+- **International System (SI) & Standard Units:** All inputs and API contracts enforce `mm/day` (rainfall), `°C` (temperature), `%` (humidity and yield anomaly), `km/h` (wind), `MJ/m²/day` (solar radiation), `YYYY-MM-DD` dates, and `null`/`NaN` for missing values.
 
 ## Technology Stack
 - **Backend API (`agrofarm-api`):** Python, FastAPI, PostgreSQL, SQLAlchemy, Alembic, Pydantic, OpenAPI v1, Schemathesis.
@@ -42,9 +43,10 @@ Smallholder farmers in Guatemala face increasing rainfall variability and El Ni�
 
 Before submitting on the Space Apps portal, open an **incognito/private browser window** and verify every link loads without authentication:
 
-- [ ] `agrofarm-api` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api` (confirm public visibility)
-- [ ] `agrofarm-analytic` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic` (confirm public visibility)
-- [ ] `agrofarm-frontend` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend` (confirm public visibility)
-- [ ] `agrofarm-docs` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs` (confirm public visibility)
-- [ ] Live demo URL / deployed app (if deployed): `<PENDING_DEPLOY_URL>` (confirm accessible without login or with clearly listed demo credentials `demo@agrofarm.org` / `DemoPass2026!`)
-- [ ] Demo video / slide deck link: `<PENDING_DECK_OR_VIDEO_URL>` (confirm "Anyone with the link can view", max 7 slides or `<= 30s` video, no NASA logos, no minors)
+- [ ] `agrofarm-api` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api`)
+- [ ] `agrofarm-analytic` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic`)
+- [ ] `agrofarm-frontend` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend`)
+- [ ] `agrofarm-docs` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs`)
+- [ ] Live app URL: `https://agrofarming.site` (confirm accessible without login or with demo credentials `demo@agrofarm.org` / `DemoPass2026!`)
+- [ ] Demo video link (`<= 30s`): `TODO_PUBLIC_URL` (confirm "Anyone with the link can view", no NASA logos, no minors)
+- [ ] Presentation slides link (max 7 slides): `TODO_PUBLIC_URL` (confirm "Anyone with the link can view", no NASA logos, no minors)

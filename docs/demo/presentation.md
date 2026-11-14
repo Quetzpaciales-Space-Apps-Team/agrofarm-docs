@@ -22,12 +22,11 @@
 
 ## Slide 3 — Data & Scientific Transparency
 **Title:** Grounded in Open Climate & Local Data
-- **Integrated / cached in demo & connectors:**
-  - **NOAA CPC (ONI / RONI):** Historical and current ENSO phase indicators (`el_nino`, `la_nina`, `neutral`).
-  - **INSIVUMEH (Guatemala):** Local daily weather station records.
-  - **NASA POWER (fixture & snapshot metadata):** Agroclimatology baseline variables.
-- **Cataloged architecture (`docs/data/datasets.md`) for full pipeline expansion:** CHIRPS v3, SMAP L4, MODIS (MOD13Q1, MOD11A2, MOD15A2H, MOD17A2H), HLS / Sentinel-2, SoilGrids 2.0, NASADEM / Copernicus DEM, GPM IMERG, ECOSTRESS.
-- **Strict data hygiene:** `EPSG:4326`, `YYYY-MM-DD`, missing values as `null`/`NaN` (never `-99.9` or `0`), SI units (`mm/day`, `°C`, `%`, `km/h`, `MJ/m²/day`).
+- **Active in current demo (`DEMO_MODE=true` / `ML_MODE=fixture`):**
+  - `core-api` serves deterministic offline snapshots (`cached_demo`) for ENSO series (`NOAA CPC` sample), scenario yield anomaly simulation, and 3+ rotation comparisons.
+  - `agrofarm-analytic` includes Python connectors for **NOAA CPC (ONI / RONI)** and **INSIVUMEH** daily weather stations (converting `-99.9` sentinels to `null`), ready to wire once HTTP endpoints are exposed via `docs/contract/ml-service-expected.yaml`.
+- **Cataloged architecture (`docs/data/datasets.md`) for post-hackathon ingestion:** NASA POWER, CHIRPS v3, SMAP L4, MODIS (MOD13Q1, MOD11A2, MOD15A2H, MOD17A2H), HLS / Sentinel-2, SoilGrids 2.0, NASADEM / Copernicus DEM, GPM IMERG, ECOSTRESS.
+- **Strict SI units & hygiene:** `EPSG:4326`, `YYYY-MM-DD`, missing values as `null`/`NaN` (never `-99.9` or `0`), SI units (`mm/day`, `°C`, `%`, `km/h`, `MJ/m²/day`).
 
 ---
 

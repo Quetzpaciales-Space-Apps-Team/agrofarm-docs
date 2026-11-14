@@ -1,0 +1,135 @@
+# Project plan: crop and rotation simulator
+
+English version of the team work plan dated 2026-11-14. The tasks are tracked as GitHub issues in the four repositories. This document explains how they fit together.
+
+## 1. Summary
+
+We are building a simulator that uses climate, soil and phenomena such as El Nino and La Nina to estimate how crops would grow on a farm. It compares at least three crop rotation strategies, including the one the farm uses today. Everything is shown on interactive maps, and the farm can upload its own data to receive recommendations.
+
+The tool supports the farmer's decision and does not replace it. Every recommendation shows the reason, the evidence, what we do not know, and the risks a local expert must review.
+
+## 2. Pipeline
+
+| Step | What it does | Service |
+|---|---|---|
+| 1. Data | Climate, rainfall, soil moisture, vegetation, soil, terrain, ENSO | `data-service` |
+| 2. Cleaning and joining | Same grid and same time steps for everything | `data-service` |
+| 3. Machine learning model | Estimates growth or yield and says how sure it is | `ml-service` |
+| 4. Rotation engine | Compares at least three strategies with agronomic rules and farmer priorities | `ml-service` |
+| 5. Maps and screens | Layers, timeline, scenario sliders, strategy comparison | `frontend` |
+| 6. Upload and demo | The farm uploads a file and gets explained recommendations | `core-api`, `frontend` |
+
+## 3. What we already have
+
+### 3.1 INSIVUMEH daily climate, 1995 to 2025
+
+One station (INSIVUMEH, Guatemala City). Daily data from 1995-01-01 to 2025-12-31: 11,323 days, no duplicate dates and no missing rows. Two sheets (1995 to 2022 and 2023 to 2025). The file is marked "preliminary data".
+
+| Variable | Unit | Observed range | Missing |
+|---|---|---|---|
+| Mean temperature | degrees C | 10.5 to 25.9 | 0.1 % |
+| Rainfall | mm per day | 0 to 232.5 | 0.4 % |
+| Relative humidity | % | 44 to 100 | 0.2 % |
+| Sunshine | hours | 0 to 11.8 | 3.3 % |
+| Cloud cover | oktas | 0 to 8 | 2.9 % |
+| Wind speed | km/h | 0 to 60.7 | 4.5 % |
+
+What to know before using it:
+
+- Missing values are written as `-99.9`. They must become null before any mean or sum.
+- Missing values cluster in a few years: cloud cover 1995 to 1998 (12 to 29 % per year), wind in 1995, 1996 and 2003 (20 to 30 %), sunshine in 2020 and 2021 (10 to 16 %). Rainfall and temperature are almost complete.
+- Rainfall averages about 1,280 mm per year and about 93 % falls from May to October. From November to April less than 40 mm falls per month.
+- Driest year 2009 (940 mm). Wettest year 2010 (2,081 mm).
+- 90 days have 50 mm or more. The one-day maximum is 232.5 mm.
+- Mean daily temperature is 20.1 degrees C, from 18.5 in January to 21.4 in April and May.
+- **Limit:** the file has only mean temperature. Minimum and maximum come from NASA POWER or Meteomatics.
+- **Limit:** it is a single point. It is valid for the farm in the capital. Other areas need CHIRPS, POWER or Meteomatics.
+
+### 3.2 Rio Contreras micro-watershed rainfall
+
+Not reviewed yet. See issues DS-015 and DEC-008.
+
+### 3.3 Free datasets
+
+See the [dataset catalog](../data/datasets.md). No source has crop yield per parcel. Labels come from GDHY, GGCP10 or SPAM (coarse grid), from seasonal maximum NDVI as a proxy, and from what the farm uploads.
+
+## 4. Technical agreements for everyone
+
+| Topic | Agreement |
+|---|---|
+| Coordinates | Latitude and longitude in EPSG:4326 |
+| Dates | `YYYY-MM-DD` in every table |
+| Missing values | Null (`NaN`). Never `-99.9` and never `0` in its place |
+| Units | Rainfall mm per day, temperature degrees C, humidity %, wind km/h, radiation MJ/m2 per day. POWER gives wind in m/s and it must be converted |
+| Grid | Training at 0.05 degrees (same as CHIRPS). Farm map at 10 to 30 m |
+| Names | English, lowercase with underscores, for example `climate_insivumeh_daily`. Raw data in `raw/` is never edited. Clean data in `clean/` |
+| Code | Rules in `AGENTS.md` of each repository: branch from `develop`, pull request into `develop` |
+| Cache | Store every API response. Meteomatics allows only 1,000 queries per day and ends with the hackathon |
+
+## 5. Team roles
+
+Names and GitHub users are pending (issue DEC-007).
+
+| Person | Role | Main delivery | Repository |
+|---|---|---|---|
+| 1 | Climate and rainfall | Clean climate, climate indicators and ENSO, ready for the model | `agrofarm-analytic` (`data-service`) |
+| 2 | Satellite and soil | Soil moisture and vegetation series, soil and terrain for the area and the farm | `agrofarm-analytic` (`data-service`) |
+| 3 | Machine learning model | Saved model with uncertainty and a scenario function | `agrofarm-analytic` (`ml-service`) |
+| 4 | Agronomy and rotations | Crop table, rules and sheets for at least three strategies | `agrofarm-analytic`, `agrofarm-docs` |
+| 5 | Maps and UI | Web app with maps, timeline, scenarios and comparison | `agrofarm-frontend` |
+| 6 | Backend, integration and demo | API, farm data upload, deployment and presentation | `agrofarm-api`, `agrofarm-docs` |
+
+## 6. Handoffs that block other people
+
+If one of these is late, say so the same day.
+
+| From | To | What | Format |
+|---|---|---|---|
+| Person 1 | Person 3 | Clean climate, indicators and ENSO | Parquet with manifest |
+| Person 2 | Person 3 | Satellite, soil and terrain series | Parquet and GeoTIFF |
+| Persons 1 and 2 | Person 5 | Map layers | GeoTIFF and GeoJSON |
+| Person 3 | Person 6 | Model and scenario function | `ml-service` contract |
+| Person 4 | Person 6 | Rule engine and crop table | `ml-service` contract and versioned table |
+| Person 4 | Person 5 | Copy, glossary and strategy sheets | Markdown |
+| Person 6 | Person 5 | API with example data first, real data later | OpenAPI contract |
+
+## 7. Phases and checkpoints
+
+Dates are pending (issue DEC-001). Each phase is a GitHub milestone with the same name in every repository.
+
+| Phase | What is achieved | Leads | Checkpoint |
+|---|---|---|---|
+| 0. Kickoff | Pilot area, crops and strategies chosen. Repositories and technical agreements ready | Persons 4 and 6 | Everyone has a task list and access to the accounts |
+| 1. Data | Data downloaded and clean. Label decided. Wireframes | Persons 1 and 2 | One clean dataset per source following the team conventions |
+| 2. Baseline model and map | First trained model. Map with example layers. Minimal API | Persons 3, 5 and 6 | One prediction runs end to end, even a bad one |
+| 3. Integration | Scenarios, uncertainty, three strategies compared, data upload | Persons 4 and 6 | The farm uploads a file and sees the comparison |
+| 4. Polish and demo | Calibration, agronomist review, plain language, deployment, presentation | Everyone | Full demo rehearsal without errors |
+| 5. Spanish port | Spanish catalog through i18n | Person 5 | Only if phase 4 is done |
+
+**Minimum if time is short:** a map with the main layers, three strategies compared with their reasons, one El Nino or La Nina scenario, and the farm data upload. ECOSTRESS, GRACE and GEDI are optional. In the issues, the minimum is labeled `priority:core` and the rest `priority:stretch`.
+
+## 8. Risks
+
+| Risk | What we do |
+|---|---|
+| No yield per parcel | Use GDHY, GGCP10 and NDVI as a proxy, ask the farm for data, and say it clearly in the app |
+| INSIVUMEH is one point and the data is preliminary | Do not extrapolate to other regions. Say it in the app. Compare with POWER and CHIRPS |
+| No minimum or maximum temperature in the file | Take them from NASA POWER or Meteomatics for frost and heat |
+| Clouds in the rainy season | Use MODIS and Sentinel-1 radar as backup |
+| Meteomatics has 1,000 queries per day and ends with the hackathon | Use it only for the point forecast, cache everything, and keep the baseline model independent of it |
+| The model looks better than it is | Validate by whole years, never by a random split |
+| Planetary Computer collection ids are not confirmed | Confirm them against the API before coding |
+| Little time | Follow the minimum above and leave the rest as optional |
+
+## 9. Open decisions
+
+| Decision | Issue |
+|---|---|
+| Hackathon delivery date and demo time | DEC-001 |
+| Pilot region, and what to do with US-only challenge datasets | DEC-002 |
+| Exact farm polygon and the crops grown today | DEC-003 |
+| "Controlled environment": scenario simulation or greenhouse | DEC-004 |
+| What data the farm uploads | DEC-005 |
+| Agronomist contact who reviews the recommendations | DEC-006 |
+| Team roster | DEC-007 |
+| Permission to use the Rio Contreras data | DEC-008 |

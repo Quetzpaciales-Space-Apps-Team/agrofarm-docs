@@ -26,3 +26,7 @@ Part of AgroFarm, a crop growth and rotation simulator for farmers. The tool sup
 | `agrofarm-api` | `core-api` |
 | `agrofarm-analytic` | `ml-service`, `data-service` |
 | `agrofarm-docs` | documentation only |
+
+## AI assistance
+
+Parts of this repository were written with AI coding assistants and reviewed by the team. See [`AI_USAGE.md`](AI_USAGE.md) for the tools, what they were used for and how to trace each use.

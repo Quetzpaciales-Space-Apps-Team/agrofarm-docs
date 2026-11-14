@@ -70,16 +70,17 @@ See the [dataset catalog](../data/datasets.md). No source has crop yield per par
 
 ## 5. Team roles
 
-Team members (GitHub users): `eldmark`, `MarceloDetlefsen`, `angcoder-c`, `jdivass`, `MagicBag-tab`, `JorgeVilledaS`. Who takes which role is still pending (issue DEC-007), so issues are not assigned yet.
+Roles agreed on 2026-11-14. The "Person 1 to 6" labels used in the issues map to these owners.
 
-| Person | Role | Main delivery | Repository |
+| Area | Owner (GitHub user) | Covers | Repository |
 |---|---|---|---|
-| 1 | Climate and rainfall | Clean climate, climate indicators and ENSO, ready for the model | `agrofarm-analytic` (`data-service`) |
-| 2 | Satellite and soil | Soil moisture and vegetation series, soil and terrain for the area and the farm | `agrofarm-analytic` (`data-service`) |
-| 3 | Machine learning model | Saved model with uncertainty and a scenario function | `agrofarm-analytic` (`ml-service`) |
-| 4 | Agronomy and rotations | Crop table, rules and sheets for at least three strategies | `agrofarm-analytic`, `agrofarm-docs` |
-| 5 | Maps and UI | Web app with maps, timeline, scenarios and comparison | `agrofarm-frontend` |
-| 6 | Backend, integration and demo | API, farm data upload, deployment and presentation | `agrofarm-api`, `agrofarm-docs` |
+| Backend | `MarceloDetlefsen` | Person 6: API, auth, farms, uploads, search | `agrofarm-api` |
+| Frontend | `MagicBag-tab` | Person 5: maps, timeline, scenarios, comparison | `agrofarm-frontend` |
+| Recommendation algorithm | `JorgeVilledaS` | Person 4: crop traits, rotation rules, strategy sheets | `agrofarm-analytic` (`ml-service`), `agrofarm-docs` |
+| Data analysis | `eldmark`, `jdivass` | Persons 1 and 2: climate, rainfall, ENSO, satellite, soil, terrain | `agrofarm-analytic` (`data-service`) |
+| Infrastructure and DevOps | `angcoder-c` | CI/CD, Docker, GCP, branch settings | all four |
+
+**Open point:** nobody owns the machine learning model yet (Person 3: label decision, feature pipeline, baseline model, uncertainty). It must be assigned to the data analysis pair or to the recommendation owner (issue DEC-007).
 
 ## 6. Handoffs that block other people
 
@@ -133,5 +134,5 @@ The delivery date is 2026-11-15, one day after this plan was written. The phases
 | "Controlled environment": scenario simulation or greenhouse | DEC-004. Decided: scenario simulation for Guatemala, ADR 0002 |
 | What data the farm uploads | DEC-005 |
 | Agronomist contact who reviews the recommendations | DEC-006 |
-| Team roster | DEC-007. Members listed in section 5, roles pending |
+| Team roster | DEC-007. Roles in section 5. Owner of the machine learning model pending |
 | Permission to use the Rio Contreras data | DEC-008 |

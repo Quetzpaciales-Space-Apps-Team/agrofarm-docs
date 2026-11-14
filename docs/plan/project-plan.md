@@ -1,6 +1,8 @@
 # Project plan: crop and rotation simulator
 
-English version of the team work plan dated 2026-11-14. The tasks are tracked as GitHub issues in the four repositories. This document explains how they fit together.
+English version of the team work plan dated 2026-11-14.
+
+**Hackathon delivery date: 2026-11-15.** The demo time is still pending. **Pilot region: Guatemala** (see [ADR 0002](../adr/0002-pilot-region-and-controlled-environment.md)). The tasks are tracked as GitHub issues in the four repositories. This document explains how they fit together.
 
 ## 1. Summary
 
@@ -68,7 +70,7 @@ See the [dataset catalog](../data/datasets.md). No source has crop yield per par
 
 ## 5. Team roles
 
-Names and GitHub users are pending (issue DEC-007).
+Team members (GitHub users): `eldmark`, `MarceloDetlefsen`, `angcoder-c`, `jdivass`, `MagicBag-tab`, `JorgeVilledaS`. Who takes which role is still pending (issue DEC-007), so issues are not assigned yet.
 
 | Person | Role | Main delivery | Repository |
 |---|---|---|---|
@@ -95,7 +97,7 @@ If one of these is late, say so the same day.
 
 ## 7. Phases and checkpoints
 
-Dates are pending (issue DEC-001). Each phase is a GitHub milestone with the same name in every repository.
+The delivery date is 2026-11-15, one day after this plan was written. The phases below are an order of work, not calendar blocks: with one day left, only `priority:core` work is realistic and the team must pick the subset it will actually build (issue DEC-001). Each phase is a GitHub milestone with the same name in every repository.
 
 | Phase | What is achieved | Leads | Checkpoint |
 |---|---|---|---|
@@ -125,11 +127,11 @@ Dates are pending (issue DEC-001). Each phase is a GitHub milestone with the sam
 
 | Decision | Issue |
 |---|---|
-| Hackathon delivery date and demo time | DEC-001 |
-| Pilot region, and what to do with US-only challenge datasets | DEC-002 |
-| Exact farm polygon and the crops grown today | DEC-003 |
-| "Controlled environment": scenario simulation or greenhouse | DEC-004 |
+| Hackathon delivery date and demo time | DEC-001. Date decided: 2026-11-15. Demo time and the one-day scope are pending |
+| Pilot region, and what to do with US-only challenge datasets | DEC-002. Decided: Guatemala, ADR 0002 |
+| Exact farm polygon and the crops grown today | DEC-003. Not decided yet |
+| "Controlled environment": scenario simulation or greenhouse | DEC-004. Decided: scenario simulation for Guatemala, ADR 0002 |
 | What data the farm uploads | DEC-005 |
 | Agronomist contact who reviews the recommendations | DEC-006 |
-| Team roster | DEC-007 |
+| Team roster | DEC-007. Members listed in section 5, roles pending |
 | Permission to use the Rio Contreras data | DEC-008 |

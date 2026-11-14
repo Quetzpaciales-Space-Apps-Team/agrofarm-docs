@@ -128,7 +128,7 @@ The delivery date is 2026-11-15, one day after this plan was written. The phases
 
 | Decision | Issue |
 |---|---|
-| Hackathon delivery date and demo time | DEC-001. Date decided: 2026-11-15. Demo time and the one-day scope are pending |
+| Hackathon delivery date and demo time | DEC-001. Decided: submit before 2026-11-15 23:59, local time of the team's Local Event (section 10). The one-day scope is pending |
 | Pilot region, and what to do with US-only challenge datasets | DEC-002. Decided: Guatemala, ADR 0002 |
 | Exact farm polygon and the crops grown today | DEC-003. Not decided yet |
 | "Controlled environment": scenario simulation or greenhouse | DEC-004. Decided: scenario simulation for Guatemala, ADR 0002 |
@@ -136,3 +136,73 @@ The delivery date is 2026-11-15, one day after this plan was written. The phases
 | Agronomist contact who reviews the recommendations | DEC-006 |
 | Team roster | DEC-007. Roles in section 5. Owner of the machine learning model pending |
 | Permission to use the Rio Contreras data | DEC-008 |
+
+## 10. Submission requirements (NASA Space Apps)
+
+Source: the official [Project Submission Guide](https://www.spaceappschallenge.org/resources/project-submission-guide/), read on 2026-11-14. The form copy lives in [`docs/demo/submission-form.md`](../demo/submission-form.md).
+
+### 10.1 Deadline
+
+- Submission opened on Saturday 2026-11-14 at 09:00. It closes on **Sunday 2026-11-15 at 23:59**, in the time zone of the team's Local Event.
+- Someone must click **"Submit for Judging"** before the deadline. A project that is only saved, or saved after the deadline, is not judged and gives no participant certificate.
+- The project can be edited and resubmitted until the deadline. Only the last saved submission is judged. Submit early, then improve.
+- The Local Event may have its own judging times. Ask the Local Lead (not verified yet).
+
+### 10.2 Conditions to be judged
+
+| Requirement | Our status |
+|---|---|
+| Every team member is a confirmed participant of the same Local Event | Not verified |
+| Every required field of the project form is filled | Draft in `submission-form.md`. The SI field was missing (section 10.4) |
+| Everything in the form and in linked material is in English | Rule G1 already asks for this |
+| The "Terms and Conditions" and "Confirm All Work is Original" boxes are checked | At submission |
+| No image, video, audio or likeness of a person under 18 | To check on the slides and screenshots |
+| No NASA logo, flag or mission identifier in generated content | To check on the slides |
+
+### 10.3 Form fields
+
+| Field | What it asks |
+|---|---|
+| Project Name | The name |
+| High-Level Project Summary | What we built, how it answers the challenge, why it matters |
+| Link to Project Demo | A slide deck of **at most 7 slides** (title and intro slides count) **or** a video of **at most 30 seconds**. Over the limit means not eligible for Global Judging |
+| Link to Final Project | A public link to the project: site, repository or hosting service |
+| Detailed Project Description | What it does, how it works, benefits, goals, tools, languages, hardware and software |
+| Use of Super Intelligence (SI) | Whether SI (AI) tools were used and how (section 10.4) |
+| NASA Data | Which NASA data and resources we used, in detail. **At least one is required for a Global Award** |
+| Space Agency Partner Data and Other References | Every dataset, resource and tool used, including code, text and images, even when open source |
+
+Rules for the demo:
+
+- Slides must be in English. A video may be spoken in another language only with English subtitles.
+- The slides must show the team name, the names of the team members and the challenge we selected. They should show an image of the project, the user experience, and how NASA and partner agency data make the solution possible.
+- The demo is hosted outside the Space Apps site. Images (JPG, PNG, GIF up to 10 MB) can be uploaded to the project page. Videos and documents cannot.
+
+Rules for every link:
+
+- **No password, no permission request and no registration.** If the judges cannot open a link, the project is not evaluated.
+- Test every link in a private browser window before submitting.
+- For a new website, the guide recommends (does not require) asking for a FortiGuard Web Filter Classification so the judges' network does not block it.
+
+### 10.4 Use of AI ("Super Intelligence")
+
+"SI" in the form means AI tools (machine learning, chatbots, image generation, large language models). It does not mean the International System of Units.
+
+- AI tools are allowed as a tool. They must not be the source of the idea for the solution.
+- We must say where and how they were used:
+  - Images and videos made with AI carry a visible watermark.
+  - Audio, code and data made with AI are acknowledged in descriptive text and metadata.
+- The answer in the form is not shown to the judges. The marks inside the project (watermarks, text, metadata) are.
+
+### 10.5 Gaps found on 2026-11-14
+
+| Gap | What to do | Owner |
+|---|---|---|
+| The four repositories are private, so the repository links fail for the judges | Make public the ones we link, or link only a public site. Check first that no secret and no data without a clear license is in the history (the INSIVUMEH file is marked preliminary and is not in git) | Infrastructure, with a team decision |
+| The live app link is described with demo credentials. A link "should not require a password" | Give the judges a page that opens without login (public demo mode or a landing page with the demo), and keep login optional | Backend, frontend |
+| NASA data is only named in fixture metadata. No connector reads NASA data yet | Build the NASA POWER connector on the series already downloaded (`data/raw/nasa_power`) and show it in the app. This is the fastest real use of NASA data | Data analysis |
+| The SI field was read as SI units | Draft added to `submission-form.md`. Every member adds the AI tools they used | Everyone |
+| AI-generated code is not acknowledged in the repositories | Add an "AI assistance" note to each README | Each repository owner |
+| The slides do not list team name, member names and challenge name | Add them to slide 1 | Demo owner |
+| Demo format not decided: slides, video, or both links in one | Pick one for the "Link to Project Demo" field | Demo owner |
+

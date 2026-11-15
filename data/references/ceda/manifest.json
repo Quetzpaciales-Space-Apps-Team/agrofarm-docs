@@ -3,8 +3,8 @@
   "dataset_id": "ceda-historical-literature-references",
   "version": "0.1.0",
   "generated_by": "OpenAI Codex (gpt-6.1-sol)",
-  "reviewed_by": null,
-  "status": "provisional_literature_transcription",
+  "reviewed_by": "eldmark",
+  "status": "literature_transcription_reviewed_by_a_team_member",
   "source_catalog": "sources.json",
   "record_count": 22,
   "yield_unit": "kg/ha",
@@ -20,8 +20,8 @@
   "artifacts": [
     {
       "path": "sources.json",
-      "sha256": "1968fc59d4e70d6834c57b998601cb2bb15b9b94fcf562426bb4e91f99b4cad2",
-      "bytes": 2795
+      "sha256": "b6d6e0d6f730e5535328ee3c692c8fa0c93b8bcaa282bde1b9aeb5cd4dfb59a5",
+      "bytes": 2831
     },
     {
       "path": "yield-references.csv",
@@ -39,5 +39,6 @@
       "Potato yields (not transcribed)",
       "Whether the bean values were measured per plant and scaled by density (they were: 44.86 g and 40.30 g per plant at 71,428.57 plants per ha)"
     ]
-  }
+  },
+  "reviewed_on": "2026-11-14"
 }

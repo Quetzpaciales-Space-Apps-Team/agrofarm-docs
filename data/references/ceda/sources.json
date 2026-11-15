@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "OpenAI Codex (gpt-6.1-sol)",
-  "reviewed_by": null,
+  "reviewed_by": "eldmark",
   "sources": [
     {
       "source_id": "USAC-CEDA-MAIZE-2008",
@@ -55,5 +55,6 @@
       "accessed_on": "2026-11-14",
       "rights_status": "Attribution-based reproduction statement in journal front matter; not a standardized open license."
     }
-  ]
+  ],
+  "reviewed_on": "2026-11-14"
 }

@@ -1,6 +1,6 @@
 # CEDA historical reference evidence
 
-Prepared with OpenAI Codex (`gpt-6.1-sol`). Human review is pending.
+Prepared with OpenAI Codex (`gpt-6.1-sol`). The numeric transcriptions were reviewed by `eldmark` on 2026-11-14.
 
 ## Scope and available files
 
@@ -51,7 +51,7 @@ been validated. The published Lippia longitude also needs geographic verificatio
 
 ## Next processing steps
 
-1. A team member still has to review the numeric transcriptions. Claude Code already compared all 22 values with the cited pages on 2026-11-14 and found no differences (see `machine_verification` in `data/references/ceda/manifest.json`). That is a second check, not human review.
+1. Done on 2026-11-14: `eldmark` reviewed the numeric transcriptions against the cited pages, after the machine check recorded in `data/references/ceda/manifest.json`. The review covers the numbers, not the trial dates, the plot locations or the reuse terms.
 2. Resolve field dates and georeference the actual experimental plots where
    source material supports it. A station point is not an experimental boundary.
 3. Investigate historical Landsat availability only after dates are resolved.

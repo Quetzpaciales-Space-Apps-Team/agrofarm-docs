@@ -53,10 +53,10 @@ Each compared rotation strategy (`>= 3`, including `is_current: true`) displays:
 ## Slide 6 — Live Demo Walkthrough (Script)
 **Title:** End-to-End Flow in Under 3 Minutes (or 30s Highlight)
 1. **Open the public demo without login** (implementation and private-window check pending). Use a private team account only for authenticated API rehearsal; do not publish credentials.
-2. **Create / Draw Farm** (`POST /v1/farms`) — provisional Guatemala City pilot polygon (`EPSG:4326`), `maize -> fallow`.
+2. **Create / Draw Farm** (`POST /v1/farms`) — example Guatemala City polygon (`EPSG:4326`) with an example `maize -> fallow` sequence. Do not present this geometry or sequence as field-verified CEDA/USAC data.
 3. **Upload Farm Data** (`POST /v1/farms/{id}/uploads`) — validated CSV/GeoJSON with row-level error reporting and SI unit checks.
 4. **Explore ENSO & Simulate Scenario** (`GET /v1/climate/enso`, `POST /v1/scenarios/simulate`) — e.g., El Niño with `-15%` rainfall and `+1.0°C`.
-5. **Compare 3+ Rotations** (`POST /v1/farms/{id}/recommendations`) — side-by-side comparison of current `maize -> fallow` vs. `maize -> beans -> sorghum` and cover-crop alternatives, highlighting `why`, `evidence`, `benefits`, `gaps`, `risks`, and `needs_local_review`.
+5. **Compare 3+ Rotations** (`POST /v1/farms/{id}/recommendations`) — compare the example `maize -> fallow` baseline with `maize -> black_beans`, `maize -> cover_crop` and `maize -> black_beans -> cover_crop`. Cover species is unspecified; scores are provisional fit points, not predicted gains. Highlight `why`, `evidence`, `benefits`, `gaps`, `risks` and `needs_local_review`.
 
 ---
 
@@ -72,5 +72,5 @@ Each compared rotation strategy (`>= 3`, including `is_current: true`) displays:
 
 - **0:00–0:06 (Slide 1-2):** "Farmers in Guatemala face unpredictable El Niño and La Niña seasons. AgroFarm helps farmers and local agronomists compare crop rotations using climate data and their own farm priorities."
 - **0:06–0:14 (Demo: Farm + Upload + ENSO):** "In AgroFarm, a farmer registers their parcel in EPSG:4326, uploads local field CSV or GeoJSON records with strict unit validation, and checks the latest NOAA ENSO phase."
-- **0:14–0:24 (Demo: Scenario + 3 Rotations):** "Running an El Niño scenario compares at least three rotations—including their current maize-fallow baseline—showing clear scores, evidence, benefits, data gaps, and risks flagged for local expert review."
+- **0:14–0:24 (Demo: Scenario + 3 Rotations):** "Compare our example maize-fallow baseline with bean and cover-crop sequences. The scores are provisional; evidence, gaps and risks stay visible for local review."
 - **0:24–0:30 (Close):** "AgroFarm supports decisions without replacing the farmer, backed by an open, offline-ready API and transparent provenance."

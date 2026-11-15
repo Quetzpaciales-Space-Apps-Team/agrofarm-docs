@@ -10,6 +10,7 @@ AI coding assistants were used as tools to write and review code, tests, CI work
 
 | Tool | Model | Used by | Used for |
 |---|---|---|---|
+| OpenAI Codex | `gpt-6.1-sol` | `JorgeVilledaS` | AGR-003 English app copy, units and glossary draft; consistency checks against the API and rotation engine. Human review pending. |
 | OpenAI Codex | `gpt-6.1-sol` | `JorgeVilledaS` | AGR-001 pilot crop and rotation handoff, tracing the unspecified cover-crop entry, separating reported choices from current field production, and recording the sorghum demo inconsistency. Human review pending. |
 | OpenAI Codex | `gpt-6.1-sol` | `JorgeVilledaS` | Correct demo rotation examples to match the engine, remove the unsupported sorghum sequence and identify the baseline as an example. Human review pending. |
 | OpenAI Codex | `gpt-6.1-sol` | `JorgeVilledaS` | Record Jorge Villeda's CEDA/USAC pilot-site confirmation, distinguish it from provisional examples and historical studies, and check documentation consistency. Human review of the text pending. |

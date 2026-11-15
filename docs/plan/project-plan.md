@@ -2,7 +2,7 @@
 
 English version of the team work plan dated 2026-11-14.
 
-**Hackathon delivery date: 2026-11-15.** The demo time is still pending. **Pilot region: Guatemala** (see [ADR 0002](../adr/0002-pilot-region-and-controlled-environment.md)). The tasks are tracked as GitHub issues in the four repositories. This document explains how they fit together.
+**Hackathon delivery date: 2026-11-15.** **The demo is today, 2026-11-15, at 18:00 (Guatemala time).** **Pilot region: Guatemala** (see [ADR 0002](../adr/0002-pilot-region-and-controlled-environment.md)). The tasks are tracked as GitHub issues in the four repositories. This document explains how they fit together.
 
 ## 1. Summary
 
@@ -128,7 +128,7 @@ The delivery date is 2026-11-15, one day after this plan was written. The phases
 
 | Decision | Issue |
 |---|---|
-| Hackathon delivery date and demo time | DEC-001. Decided: submit before 2026-11-15 23:59, local time of the team's Local Event (section 10). The one-day scope is pending |
+| Hackathon delivery date and demo time | DEC-001. Decided: demo on 2026-11-15 at 18:00, Guatemala time. Submit before 2026-11-15 23:59, local time of the team's Local Event (section 10). The phases are an order of work, not calendar blocks, and the scope for the day is `priority:core` work (see the schedule below) |
 | Pilot region, and what to do with US-only challenge datasets | DEC-002. Decided: Guatemala, ADR 0002 |
 | Exact farm polygon and the crops grown today | DEC-003. CEDA/USAC, zone 12, selected by team confirmation reported by `JorgeVilledaS`; see [ADR 0006](../adr/0006-ceda-usac-pilot-site.md). Exact parcel boundary (Person 2), current crops and seasonal management remain pending. The Canalitos fixtures are not the selected pilot geometry. |
 | "Controlled environment": scenario simulation or greenhouse | DEC-004. Decided: scenario simulation for Guatemala, ADR 0002 |

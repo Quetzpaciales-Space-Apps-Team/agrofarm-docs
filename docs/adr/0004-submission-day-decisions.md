@@ -4,6 +4,11 @@
 - Date: 2026-11-15
 - Deciders: `eldmark` (data analysis). The crop choice still needs confirmation from `JorgeVilledaS` (recommendation algorithm).
 
+Area decision update: [ADR 0006](0006-ceda-usac-pilot-site.md) selects CEDA/USAC,
+zone 12, as the pilot site. The original area decision below remains historical
+context; it does not identify the current selected site. Parcel boundaries and
+current crops remain pending.
+
 ## Context
 
 The submission closes on 2026-11-15 at 23:59, local time. Several open decisions blocked work in `agrofarm-analytic` and in the frontend. There is no yield data per parcel, no decided farm polygon, and no agronomist available to review today. The team needed a version that is honest about these gaps instead of waiting for them to close.

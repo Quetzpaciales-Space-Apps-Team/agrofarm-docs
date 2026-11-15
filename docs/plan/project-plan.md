@@ -130,14 +130,14 @@ The delivery date is 2026-11-15, one day after this plan was written. The phases
 |---|---|
 | Hackathon delivery date and demo time | DEC-001. Decided: submit before 2026-11-15 23:59, local time of the team's Local Event (section 10). The one-day scope is pending |
 | Pilot region, and what to do with US-only challenge datasets | DEC-002. Decided: Guatemala, ADR 0002 |
-| Exact farm polygon and the crops grown today | DEC-003. Assigned to `eldmark` (Person 2); provisional [farm](../../data/fixtures/farm.geojson) and [training-area](../../data/fixtures/training_area.geojson) GeoJSON are proposed. Boundary and coffee system still need local confirmation |
+| Exact farm polygon and the crops grown today | DEC-003. CEDA/USAC, zone 12, selected by team confirmation reported by `JorgeVilledaS`; see [ADR 0006](../adr/0006-ceda-usac-pilot-site.md). Exact parcel boundary (Person 2), current crops and seasonal management remain pending. The Canalitos fixtures are not the selected pilot geometry. |
 | "Controlled environment": scenario simulation or greenhouse | DEC-004. Decided: scenario simulation for Guatemala, ADR 0002 |
 | What data the farm uploads | DEC-005 |
 | Agronomist contact who reviews the recommendations | DEC-006 |
 | Team roster | DEC-007. Roles in section 5. Owner of the machine learning model pending |
 | Permission to use the Rio Contreras data | DEC-008 — resolved 2026-11-15; attribute to FUNCAGUA |
 
-**Provisional DEC-003 crop report from `eldmark`:** Arabica coffee under shade, with black beans used as a cover crop during renovation. This describes the reported current system; it does not establish that the model supports coffee or that the crop system has been field-verified.
+**DEC-003 site confirmation, 2026-11-15:** Jorge Villeda (`JorgeVilledaS`) reports confirmation with `eldmark` that the selected parcel is CEDA/USAC, zone 12. The earlier Canalitos report of shaded Arabica coffee with black beans during renovation does not describe confirmed crops at CEDA. Current crops and seasonal management still need confirmation; historical CEDA studies do not supply the current inventory.
 
 ## 10. Submission requirements (NASA Space Apps)
 

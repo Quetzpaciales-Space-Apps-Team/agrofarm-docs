@@ -8,15 +8,15 @@
 **AgroFarm: Climate-Aware Crop Rotation Decision Support**
 
 ## High-Level Project Summary (Short)
-AgroFarm is a decision-support tool for smallholder farmers and local agronomists that compares at least three crop rotation strategies—always including the farmer's current rotation—by combining climate and ENSO indicators, local farm records, and farmer-defined priorities. Every recommendation transparently presents the rationale, supporting evidence, expected benefits, information gaps, and risks requiring local expert review.
+AgroFarm is a decision-support prototype for smallholder farmers and local agronomists. It displays historical NASA POWER and ENSO indicators and compares at least three crop rotation strategies, including the farm's current rotation, using declared rules and farmer-defined priorities. Every recommendation presents the rationale, supporting evidence, expected benefits, information gaps, and risks requiring local expert review. Uploaded farm observations are validated and stored but do not yet change the results.
 
 ## Detailed Project Description
 Smallholder farmers in Guatemala face increasing rainfall variability and El Niño / La Niña (ENSO) extremes, yet most agricultural tools either hide assumptions in black-box scores or ignore the farmer's own water, equipment, and income constraints.
 
 **AgroFarm** addresses this by putting the farmer and local agronomist in control:
-1. **Farm & Priority Mapping:** Farmers define their parcel boundary in `EPSG:4326` GeoJSON and weight seven priorities (water use, income, soil structure, forage value, nitrogen fixing, erosion reduction, and market suitability) alongside water availability and equipment constraints.
-2. **Validated Local Data Upload:** Farmers or extensionists upload CSV or GeoJSON parcel observations (`YYYY-MM-DD`, SI units: `mm/day`, `°C`, `%`, `km/h`, `MJ/m²/day`, missing values as `null`/`NaN`). Invalid rows return clear, row-level feedback.
-3. **ENSO & Climate Scenario Simulation:** Users inspect historical/current ONI & RONI ENSO phases and simulate rainfall/temperature shifts to see projected yield anomaly ranges (`p10`/`p50`/`p90`) and feature attributions.
+1. **Example Farm and Farmer Priorities:** The guest demo starts with an example farm. The API supports parcel boundaries in `EPSG:4326` GeoJSON and seven priority weights (water use, income, soil structure, forage value, nitrogen fixing, erosion reduction, and market suitability), plus water and equipment settings. The app does not yet have an interactive map for drawing a real parcel. The pilot reference geometry is a bounding box around the INSIVUMEH station, not a surveyed farm boundary. API support for a setting does not establish that every rule uses it.
+2. **Validated Local Data Upload through the API:** The API accepts CSV or GeoJSON farm observations and returns row-level validation errors. Valid observations are stored. Uploads do not yet feed the simulation or change recommendations; this is a data collection capability, not farm-specific calibration. Browser upload and priority controls must be checked against the deployed frontend before they are described as available in the app.
+3. **ENSO & Climate Scenario Simulation:** Users inspect historical ONI & RONI ENSO phases and move rainfall, temperature and ENSO controls to see an illustrative range (`p10`/`p50`/`p90`) of yield anomaly with the contribution of each input. The range comes from declared fixed rules, not from a trained model, and the response says so.
 4. **Transparent Rotation Comparison:** AgroFarm evaluates at least three rotation strategies—always including the current baseline—returning per-priority scores, uncertainty bounds, `why`, `evidence`, `benefits`, `gaps`, `risks`, `needs_local_review`, and persisted provenance (`model_version`, `data_versions`, `input_hash`).
 
 **Human-in-the-loop principle:** AgroFarm explicitly states on every recommendation that it supports decisions and does not replace farmers or local agronomists.
@@ -33,8 +33,10 @@ Yes. AI tools were used to accelerate implementation and documentation; `TODO_TE
 - **Images, video and audio:** `TODO_TEAM_CONFIRM`: state "none generated with AI", or list any generated assets and add a visible watermark.
 
 ## NASA Data Used
-- **Current Demo Reality (`DEMO_MODE=true` / `ML_MODE=fixture`):** The demo serves deterministic offline snapshots and fixed-rule fixtures. The NASA POWER connector can clean a downloaded daily CSV into Parquet with a manifest, but the app does not consume or display that dataset yet. Do not claim NASA POWER is active in the demo until the data reaches a visible app feature.
-- **Cataloged NASA Earth Observation datasets (`docs/data/datasets.md`, planned pipeline):** NASA POWER (agroclimatology), SMAP L4 (soil moisture), MODIS (MOD13Q1, MOD11A2, MOD15A2H, MOD17A2H), HLS / Sentinel-2, GPM IMERG, ECOSTRESS, and NASADEM. These are not all integrated into the demo.
+- **NASA POWER (agroclimatology), shown in the app:** monthly rainfall and mean, minimum and maximum temperature for the reference point (INSIVUMEH station, 14.59, -90.53), 1995 to 2025, served by `GET /v1/climate/nasa-power` and charted in the climate panel with its source, attribution and a note that it is a reanalysis grid cell of about 50 km, not a station. The values are a stored snapshot, not a live call. The `agrofarm-analytic` connector can also fetch point and regional series from the POWER API.
+- **NASA MODIS MOD13Q1 NDVI (Terra), used in an experiment only:** the seasonal peak NDVI on cropland, 2000 to 2024, is the label of an experimental model reported as an annex ([annex](../model/ndvi-experimental-result.md)). It did not pass the skill rule and the app does not use it.
+- **Other cataloged NASA Earth Observation datasets (`docs/data/datasets.md`, planned pipeline):** SMAP L4 (soil moisture), MOD11A2, MOD15A2H, MOD17A2H, HLS, GPM IMERG, ECOSTRESS and NASADEM. They are not integrated into the demo.
+- **Demo mode:** the public demo serves the NASA POWER and ENSO series from stored snapshots. The intended live simulation and rotation path uses declared fixed rules. If that service is unavailable, the API can return saved example answers labeled `cached_demo` in provenance. Those answers do not change with the scenario. A staging API check on 2026-11-15 still returned that fallback; verify that scenario changes affect the results before presenting the demo as interactive.
 
 ## Space Agency / Partner / Other Data & SI Units Used
 - **NOAA Climate Prediction Center (CPC):** Oceanic Niño Index (ONI) and Relative Oceanic Niño Index (RONI) via the `agrofarm-analytic` ENSO connector (`enso.py`) and cached demo snapshots (`GET /v1/climate/enso`).
@@ -44,7 +46,7 @@ Yes. AI tools were used to accelerate implementation and documentation; `TODO_TE
 
 ## Technology Stack
 - **Backend API (`agrofarm-api`):** Python, FastAPI, PostgreSQL, SQLAlchemy, Alembic, Pydantic, OpenAPI v1, Schemathesis.
-- **Analytics & ML (`agrofarm-analytic`):** Python data connectors (NOAA CPC ONI/RONI, INSIVUMEH) and rainfall/scenario ML service.
+- **Analytics & ML (`agrofarm-analytic`):** Python data connectors (INSIVUMEH, NOAA CPC ONI/RONI, NASA POWER, CHIRPS, SoilGrids, Copernicus DEM, ESA WorldCover, Planetary Computer NDVI, Meteomatics forecast) and an ML service with a fixed-rule simulation and a rotation rule engine over a provisional crop traits table.
 - **Frontend (`agrofarm-frontend`):** React 19, TypeScript, Vite, Vitest.
 - **Documentation & Governance (`agrofarm-docs`):** Markdown ADRs, OpenAPI contracts, data upload schemas (`DEC-005`).
 

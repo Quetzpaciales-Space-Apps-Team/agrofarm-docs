@@ -1,0 +1,5 @@
+# Demo & Submission Assumptions (`agrofarm-docs`)
+
+1. **Primary Live Demo URL:** `https://agrofarming.site` is now live and serves the same frontend bundle as `https://frontend-staging-7l2bzjrqpq-uc.a.run.app`, configured via `/config.json` with `useMocks: false` pointing to `https://core-api-staging-7l2bzjrqpq-uc.a.run.app`. Both URLs are listed (primary + backup) until `develop -> main` production promotion is completed.
+2. **Honest ML & Data Scope:** Staging `core-api` calls `ml-service-staging` for `/v1/scenarios/simulate` (`agrofarm-stub` fixed rules) and `/v1/farms/{farm_id}/recommendations` (`agrofarm-rotation-rule-engine`, `rules-0.1.1` over provisional crop traits), while `GET /v1/climate/nasa-power` serves a stored monthly snapshot (1995–2025 at `14.59, -90.53`). Trained NDVI (`vegetation/simulate`) and maize-leaf (`leaves/assess`) endpoints are disclosed with their validation limits.
+3. **Human-Confirmed Placeholders:** `TODO_TEAM_CONFIRM` (human-originated idea confirmation, AI media confirmation) and `TODO_PUBLIC_URL` (public repo URLs for the 3 currently private repos, video `<=30s`, slides `<=7`) remain explicit until confirmed by the team.

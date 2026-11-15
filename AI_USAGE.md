@@ -10,6 +10,7 @@ AI coding assistants were used as tools to write and review code, tests, CI work
 
 | Tool | Model | Used by | Used for |
 |---|---|---|---|
+| OpenAI Codex | `gpt-6.1-sol` | `JorgeVilledaS` | AGR-001 pilot crop and rotation handoff, tracing the unspecified cover-crop entry, separating reported choices from current field production, and recording the sorghum demo inconsistency. Human review pending. |
 | Claude Code | `claude-fable-5-2` | `eldmark` | Repository rules, CI, scaffolds, connectors, tests, documentation, data analysis |
 | OpenAI Codex | `gpt-6.1-sol` | `eldmark` | CEDA historical source research, provisional maize and bean yield transcription, provenance manifests and evidence documentation; numbers checked against the source pages by Claude Code and then reviewed by `eldmark` on 2026-11-14 |
 | OpenAI Codex | `GPT-6` | `eldmark` | Dataset ownership handoff, provisional geometry formatting and area checks, demo credential removal, model-status corrections and submission documentation |

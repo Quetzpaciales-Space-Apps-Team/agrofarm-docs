@@ -56,6 +56,11 @@ Three warnings:
 
 ## Training labels
 
+Local historical evidence is organized in the [CEDA evidence register](ceda-evidence.md).
+It includes maize and bean yield references and potato and Lippia source records.
+These are literature references with unresolved plot georeferencing, not spatial
+training labels or a continuous annual series.
+
 | Dataset | What it gives | Resolution | Period | Limit |
 |---|---|---|---|---|
 | GDHY | Annual yield of maize, rice, wheat and soybean | 0.5 degrees | 1981 to 2016 | Coarse and ends in 2016, but it is the longest series to cross with ENSO |
@@ -85,7 +90,7 @@ Gradient boosting (LightGBM or XGBoost) on this table is enough for the hackatho
 
 ## Gaps and risks
 
-- **Local yield:** missing. Departmental or municipal statistics from the agriculture ministry are worth looking for. Not verified.
+- **Local yield:** historical CEDA literature references are cataloged; plot boundaries and complete field dates remain unresolved. Departmental or municipal statistics from the agriculture ministry are worth looking for. Not verified.
 - **Current crop type:** WorldCereal covers only maize and cereals in 2021. For coffee, sugar cane, beans or vegetables it depends on what the farmer declares.
 - **Clouds:** in the humid tropics Sentinel-2 and Landsat lose many scenes in the rainy season. Sentinel-1 radar is the backup.
 - **Soil:** SoilGrids is a 250 m prediction, not a lab analysis. A farm soil analysis overrides it.

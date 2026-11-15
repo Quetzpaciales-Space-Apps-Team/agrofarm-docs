@@ -192,7 +192,7 @@ Each task is a GitHub issue with the same ID in its title. The full acceptance c
 
 - [ ] **DEC-005** Define the farm upload schema (fields, units, required columns). *(core, needs-human)*
 - [ ] **DEC-006** Find a local agronomist or farmer who will review the recommendations. *(core, needs-human)*
-- [ ] **DEC-008** Confirm permission to use the Rio Contreras rainfall data. *(core, needs-human)*
+- [x] **DEC-008** Confirm permission to use the Rio Contreras rainfall data; attribute to FUNCAGUA. *(core, resolved 2026-11-15)*
 - [ ] **OPS-002** Choose the domains for the frontend and the API (same registrable domain) and the CORS allowlist. *(core, needs-human)*
 - [ ] **OPS-003** Create the external data accounts and store their credentials in Secret Manager. *(core, needs-human)*
 

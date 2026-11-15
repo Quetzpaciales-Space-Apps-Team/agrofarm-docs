@@ -23,14 +23,14 @@ Smallholder farmers in Guatemala face increasing rainfall variability and El NiÃ
 
 ## Use of Super Intelligence (SI)
 
-> "SI" in the Space Apps form means AI tools, not SI units. Draft: every team member must add the tools they used before submission.
+> "SI" in the Space Apps form means AI tools, not SI units. Draft: every team member must confirm/add the tools they used before submission.
 
-Yes. AI tools were used to speed up the work, not to choose the idea.
+Yes. AI tools were used to accelerate implementation and documentation; `TODO_TEAM_CONFIRM`: confirm that project ideas were not AI-generated. SI usage is disclosed in project text, repository metadata, and pull requests.
 
-- **Code:** AI assistants helped with code, tests, CI workflows, OpenAPI contracts and documentation. Claude Code is confirmed for `eldmark`; OpenAI Codex was used by `eldmark` for documentation and demo-access corrections. Other team members must add their tools before submission. Each repository README links to its AI-use statement.
-- **Documentation:** Claude Code and OpenAI Codex helped draft or correct the plan, dataset catalog, repository rules and demo materials. Team members must review the final changes.
-- **Machine learning inside the product:** the current `agrofarm-analytic` service is a fixed-rule stub, not a trained rainfall model. A trained baseline and its model card are still pending; do not describe model predictions as validated results.
-- **Images, video and audio:** TODO: state "none generated with AI", or list them and add a visible watermark.
+- **Code:** AI coding assistants (Claude Code, OpenAI Codex, Antigravity) assisted with backend/frontend scaffolding, tests, CI workflows, and OpenAPI contracts. Team members should confirm their individual tools before submission.
+- **Documentation:** AI assistants helped draft or refine the project plan, dataset catalog, repository rules, and demo/submission materials (reviewed by team members).
+- **Machine learning inside the product:** `agrofarm-analytic/services/ml` includes `lightgbm>=4.7.0` in its dependencies, while the active `/v1/simulate` and `/v1/rotations/score` endpoints currently run a deterministic fixed-rule stub (`agrofarm_ml.stub`), not a trained rainfall model yet; do not describe outputs as validated ML predictions.
+- **Images, video and audio:** `TODO_TEAM_CONFIRM`: state "none generated with AI", or list any generated assets and add a visible watermark.
 
 ## NASA Data Used
 - **Current Demo Reality (`DEMO_MODE=true` / `ML_MODE=fixture`):** The demo serves deterministic offline snapshots and fixed-rule fixtures. The NASA POWER connector can clean a downloaded daily CSV into Parquet with a manifest, but the app does not consume or display that dataset yet. Do not claim NASA POWER is active in the demo until the data reaches a visible app feature.
@@ -58,6 +58,6 @@ Before submitting on the Space Apps portal, open an **incognito/private browser 
 - [ ] `agrofarm-analytic` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic`)
 - [ ] `agrofarm-frontend` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend`)
 - [ ] `agrofarm-docs` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs`)
-- [ ] Live app URL: `https://agrofarming.site` (confirm the public demo opens without login; do not include or share credentials)
+- [ ] Live app URL (provisional staging): `https://frontend-staging-7l2bzjrqpq-uc.a.run.app` (custom domain `https://agrofarming.site` is `DNS pending`; confirm the public demo opens without login and never share credentials)
 - [ ] Demo video link (`<= 30s`): `TODO_PUBLIC_URL` (confirm "Anyone with the link can view", no NASA logos, no minors)
 - [ ] Presentation slides link (max 7 slides): `TODO_PUBLIC_URL` (confirm "Anyone with the link can view", no NASA logos, no minors)

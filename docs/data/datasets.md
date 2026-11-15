@@ -129,23 +129,25 @@ A local source worth requesting: the Private Institute for Climate Change Resear
 
 ## Dataset owners
 
+For the current handoff, `eldmark` takes the Person 2 dataset tasks first. GitHub issues DS-030, DS-031, DS-040, DS-041, DS-042 and DS-080 are assigned to `eldmark`. After that phase is complete, assign the Person 1 climate tasks to `jdivass`.
+
 | Dataset | Owner | Issue |
 |---|---|---|
-| INSIVUMEH 1995 to 2025 | Person 1 | DS-010 |
-| Rio Contreras rainfall | Person 1 | DS-015 |
-| NASA POWER | Person 1 | DS-020 |
-| CHIRPS v3 | Person 1 | DS-021 |
-| ERA5-Land | Person 1 | DS-022 |
-| RONI and ONI | Person 1 | DS-023 |
-| Meteomatics | Person 1 | DS-070 |
+| INSIVUMEH 1995 to 2025 | `jdivass` (Person 1, after Person 2 phase) | DS-010 |
+| Rio Contreras rainfall | `jdivass` (Person 1, after Person 2 phase) | DS-015 |
+| NASA POWER | `jdivass` (Person 1, after Person 2 phase) | DS-020 |
+| CHIRPS v3 | `jdivass` (Person 1, after Person 2 phase) | DS-021 |
+| ERA5-Land | `jdivass` (Person 1, after Person 2 phase) | DS-022 |
+| RONI and ONI | `jdivass` (Person 1, after Person 2 phase) | DS-023 |
+| Meteomatics | `jdivass` (Person 1, after Person 2 phase) | DS-070 |
 | GPM IMERG, GLDAS-2.1 | Person 1 | No issue yet (support) |
-| SMAP L4, MODIS, VIIRS | Person 2 | DS-030 |
-| Sentinel-2 or HLS | Person 2 | DS-031 |
-| SoilGrids 2.0 | Person 2 | DS-040 |
-| 30 m DEM | Person 2 | DS-041 |
-| IO LULC or WorldCover | Person 2 | DS-042 |
-| ECOSTRESS ESI | Person 2 | DS-080 |
-| Hansen GFC | Person 2 | No issue yet (context) |
+| SMAP L4, MODIS, VIIRS | `eldmark` (Person 2, first phase) | DS-030 |
+| Sentinel-2 or HLS | `eldmark` (Person 2, first phase) | DS-031 |
+| SoilGrids 2.0 | `eldmark` (Person 2, first phase) | DS-040 |
+| 30 m DEM | `eldmark` (Person 2, first phase) | DS-041 |
+| IO LULC or WorldCover | `eldmark` (Person 2, first phase) | DS-042 |
+| ECOSTRESS ESI | `eldmark` (Person 2, first phase) | DS-080 |
+| Hansen GFC | `eldmark` (Person 2, first phase) | No issue yet (context) |
 | GDHY, GGCP10, SPAM 2010 | Person 3 | DS-045 |
 | FAO GAEZ v5 | Person 4 | DS-046 |
 | FAO ECOCROP and FAO-56 Kc | Person 4 | ML-038 |

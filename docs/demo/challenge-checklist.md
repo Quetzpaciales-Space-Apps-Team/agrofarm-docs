@@ -4,25 +4,28 @@
 
 | Challenge Requirement | Satisfying Endpoint / Artifact / Screen | Verification Status |
 |---|---|---|
-| Decision-support framing (supports, does not replace farmer/expert) | `POST /v1/farms/{farm_id}/recommendations` returns `disclaimer` + `needs_local_review`; `presentation.md` Slides 1 & 4 | Implemented & tested in `core-api` |
-| Compare at least 3 crop rotation strategies (including current) | `POST /v1/farms/{farm_id}/recommendations` enforces `len(strategies) >= 3` and `any(s.is_current)` in `core_api.domain.recommendations` | Implemented & tested in `core-api` |
-| Each recommendation includes why, evidence, benefits, gaps, risks, uncertainty, priority scores | `POST /v1/farms/{farm_id}/recommendations` schema & `map_and_validate_recommendations` | Implemented & tested in `core-api` |
-| Uses climate + local farm data + farmer priorities | `GET /v1/climate/enso`, `PUT /v1/farms/{farm_id}/priorities`, `POST /v1/farms/{farm_id}/uploads`, NOAA ENSO and INSIVUMEH connectors | Implemented (API + connectors) |
-| Uses NASA data in a visible app feature | NASA POWER connector and clean dataset manifest | Pending: connector output is not consumed or shown in the app |
-| Farm data upload (CSV/GeoJSON) with column, unit, date, CRS validation | `POST /v1/farms/{farm_id}/uploads` following `docs/data/farm-upload-schema.md` (`DEC-005`) | Implemented & tested in `core-api` |
+| Decision-support framing (supports, does not replace farmer/expert) | `POST /v1/farms/{farm_id}/recommendations` returns `disclaimer` + `needs_local_review`; visible across frontend views | Implemented & live in staging |
+| Compare at least 3 crop rotation strategies (including current) | `POST /v1/farms/{farm_id}/recommendations` returns 4 strategies (`>= 3`, `is_current: true`) via `agrofarm-rotation-rule-engine` (`rules-0.1.1`) | Implemented & live in staging |
+| Each recommendation includes why, evidence, benefits, gaps, risks, uncertainty, priority scores | `POST /v1/farms/{farm_id}/recommendations` schema & frontend comparison cards/drawer | Implemented & live in staging |
+| Uses climate + local farm data + farmer priorities | `GET /v1/climate/enso`, `PUT /v1/farms/{farm_id}/priorities`, `POST /v1/farms/{farm_id}/uploads`, NOAA ENSO & INSIVUMEH | Implemented & live in staging |
+| Uses NASA data in a visible app feature | `GET /v1/climate/nasa-power` (1995–2025 monthly series at `14.59, -90.53`) charted in frontend + MODIS NDVI regional outlook (`vegetation/simulate`) | Implemented & live in staging |
+| Farm data upload (CSV/GeoJSON) with column, unit, date, CRS validation | `POST /v1/farms/{farm_id}/uploads` following `docs/data/farm-upload-schema.md` (`DEC-005`) | Implemented & live in staging |
 | OpenAPI documentation | `agrofarm-api/docs/contract/openapi.yaml` + FastAPI `/docs` and `/openapi.json` | Implemented & Schemathesis-verified |
-| Offline demo resilience (works without internet) | `DEMO_MODE=true` (`DemoMLClient` + `demo_snapshots/*.json`) + `make seed-demo` | Implemented & tested in `core-api` |
-| Presentation in English, max 7 slides, no NASA logos, no minors | `docs/demo/presentation.md` (7 slides + 30s script; `.pptx` export optional if PowerPoint/Slides needed) | Ready in `agrofarm-docs` |
-| Submission form copy in English & public links without login | `docs/demo/submission-form.md` (`DEMO-003`) | Draft ready; public links and no-login access still need verification |
+| Passwordless public judge demo | `"Try the demo"` -> `POST /v1/auth/demo` (`https://agrofarming.site` & `https://frontend-staging-7l2bzjrqpq-uc.a.run.app`) | Implemented & live in staging |
+| Presentation in English, max 7 slides, no NASA logos, no minors | `docs/demo/presentation.md` (7 slides) + `docs/demo/video-script.md` (30s script) | Ready in `agrofarm-docs` |
+| Submission form copy in English & public links without login | `docs/demo/submission-form.md` (`DEMO-003`) | Draft updated; public repo visibility & video/slides URLs pending |
 
-## 2. Demo Script Coverage Check
-- [x] Register / Login (`POST /v1/auth/register`, `POST /v1/auth/login`) for authenticated testing
-- [ ] Open the public demo without login (required for judging; implementation and private-window check pending)
-- [x] Draw / Create Farm (`POST /v1/farms` with `EPSG:4326` GeoJSON Polygon)
-- [x] Upload Data (`POST /v1/farms/{farm_id}/uploads` using `docs/data/examples/farm-upload-template.csv` or `farm-upload-example.geojson`)
-- [x] Run an ENSO Scenario (`GET /v1/climate/enso` + `POST /v1/scenarios/simulate`)
-- [x] Compare 3+ Rotations (`POST /v1/farms/{farm_id}/recommendations`)
-- [ ] Frontend live screen capture / URL (`FE-505` — pending `agrofarm-frontend#36`)
+---
+
+## 2. Final Submission Delivery Checklist (Before `23:59` Local Time)
+
+- [ ] **Public Repositories (`G12`):** Set `agrofarm-api`, `agrofarm-analytic`, and `agrofarm-frontend` visibility from `PRIVATE` to `PUBLIC` (`agrofarm-docs` is already `PUBLIC`).
+- [ ] **Incognito Link Check:** Open `https://agrofarming.site`, `https://frontend-staging-7l2bzjrqpq-uc.a.run.app`, all 4 GitHub repos, video link, and slides link in an **incognito/private browser window** and confirm zero login/permission prompts.
+- [ ] **Full No-Login Demo Walkthrough (`DEMO-002`):** Complete `"Try the demo"` -> farm & priorities -> CSV/GeoJSON upload -> ENSO & NASA POWER -> simulate -> `>= 3` rotation strategies -> confirm `disclaimer` is visible.
+- [ ] **Media Compliance:** Video `<= 30s` and/or slides `<= 7` uploaded with `"Anyone with the link can view"`, no NASA logos/branding, no images of minors (`< 18`), and AI watermarks if any media was AI-generated.
+- [ ] **Submission Form:** All fields in English, `TODO_TEAM_CONFIRM` and `TODO_PUBLIC_URL` resolved, submitted on the Space Apps portal before `23:59` local time.
+
+---
 
 ## 3. Offline Demo Runbook (Zero Internet Required)
 From `agrofarm-api/`:
@@ -34,5 +37,3 @@ uv run python -m core_api.seed_demo
 DEMO_MODE=true uv run uvicorn core_api.main:create_app --factory --port 8080
 ```
 *(If port 5432 is busy locally, pass `DB_PORT=5433` and update `DATABASE_URL` port to `5433`.)*
-
-Note on `.pptx`: `libreoffice` is available locally, while `pandoc`/`python-pptx` are not installed; `docs/demo/presentation.md` contains the complete 7-slide deck and speaker script ready to paste into Google Slides / PowerPoint or export to PDF.

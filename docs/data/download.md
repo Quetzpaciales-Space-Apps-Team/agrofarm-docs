@@ -10,7 +10,7 @@ scripts/download_open_datasets.sh enso power      # only some sources
 GCS_BUCKET=gs://<bucket> scripts/download_open_datasets.sh   # also sync data/raw to the bucket
 ```
 
-The script skips files that already exist, so it can be re-run after a failure. Tested on 2026-11-14 for `enso`, `power`, `chirps` and `soilgrids`. For `dem`, `worldcover` and `hansen` only the URLs were checked, not a full download.
+The script skips files that already exist, so it can be re-run after a failure. Tested on 2026-11-14 for `enso`, `power`, `chirps` and `soilgrids`. A later local inventory on 2026-11-14 found 24 Copernicus DEM tiles (about 866 MB) and four ESA WorldCover tiles (about 247 MB) downloaded under `data/raw/`. Hansen remains URL-checked only. Raw files are ignored by Git and are not committed.
 
 | Source key | Dataset | What is downloaded | Approx. size | URL pattern |
 |---|---|---|---|---|

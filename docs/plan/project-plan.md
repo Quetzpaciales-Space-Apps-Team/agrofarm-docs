@@ -77,7 +77,7 @@ Roles agreed on 2026-11-14. The "Person 1 to 6" labels used in the issues map to
 | Backend | `MarceloDetlefsen` | Person 6: API, auth, farms, uploads, search | `agrofarm-api` |
 | Frontend | `MagicBag-tab` | Person 5: maps, timeline, scenarios, comparison | `agrofarm-frontend` |
 | Recommendation algorithm | `JorgeVilledaS` | Person 4: crop traits, rotation rules, strategy sheets | `agrofarm-analytic` (`ml-service`), `agrofarm-docs` |
-| Data analysis | `eldmark`, `jdivass` | Persons 1 and 2: climate, rainfall, ENSO, satellite, soil, terrain | `agrofarm-analytic` (`data-service`) |
+| Data analysis | `eldmark` (Person 2, first), then `jdivass` (Person 1 after Person 2's phase) | Person 2: satellite, soil and terrain; Person 1: climate, rainfall and ENSO | `agrofarm-analytic` (`data-service`) |
 | Infrastructure and DevOps | `angcoder-c` | CI/CD, Docker, GCP, branch settings | all four |
 
 **Open point:** nobody owns the machine learning model yet (Person 3: label decision, feature pipeline, baseline model, uncertainty). It must be assigned to the data analysis pair or to the recommendation owner (issue DEC-007).
@@ -130,12 +130,14 @@ The delivery date is 2026-11-15, one day after this plan was written. The phases
 |---|---|
 | Hackathon delivery date and demo time | DEC-001. Decided: submit before 2026-11-15 23:59, local time of the team's Local Event (section 10). The one-day scope is pending |
 | Pilot region, and what to do with US-only challenge datasets | DEC-002. Decided: Guatemala, ADR 0002 |
-| Exact farm polygon and the crops grown today | DEC-003. Not decided yet |
+| Exact farm polygon and the crops grown today | DEC-003. Assigned to `eldmark` (Person 2); provisional [farm](../../data/fixtures/farm.geojson) and [training-area](../../data/fixtures/training_area.geojson) GeoJSON are proposed. Boundary and coffee system still need local confirmation |
 | "Controlled environment": scenario simulation or greenhouse | DEC-004. Decided: scenario simulation for Guatemala, ADR 0002 |
 | What data the farm uploads | DEC-005 |
 | Agronomist contact who reviews the recommendations | DEC-006 |
 | Team roster | DEC-007. Roles in section 5. Owner of the machine learning model pending |
 | Permission to use the Rio Contreras data | DEC-008 |
+
+**Provisional DEC-003 crop report from `eldmark`:** Arabica coffee under shade, with black beans used as a cover crop during renovation. This describes the reported current system; it does not establish that the model supports coffee or that the crop system has been field-verified.
 
 ## 10. Submission requirements (NASA Space Apps)
 

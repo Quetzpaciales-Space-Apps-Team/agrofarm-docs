@@ -27,14 +27,14 @@ Smallholder farmers in Guatemala face increasing rainfall variability and El Ni�
 
 Yes. AI tools were used to speed up the work, not to choose the idea.
 
-- **Code:** AI coding assistants (Claude Code is confirmed for `eldmark`; other members: TODO) helped write and review code, tests, CI workflows and OpenAPI contracts in the four repositories. Team members reviewed the output. Each repository README states this (TODO: add the note).
-- **Documentation:** AI assistants helped draft and translate the plan, the dataset catalog and the repository rules.
-- **Machine learning inside the product:** the rainfall baseline is a gradient boosting model (LightGBM) trained on station rainfall and the NOAA RONI index. On held-out years it does not beat the monthly climatology, and the model card says so.
+- **Code:** AI assistants helped with code, tests, CI workflows, OpenAPI contracts and documentation. Claude Code is confirmed for `eldmark`; OpenAI Codex was used by `eldmark` for documentation and demo-access corrections. Other team members must add their tools before submission. Each repository README links to its AI-use statement.
+- **Documentation:** Claude Code and OpenAI Codex helped draft or correct the plan, dataset catalog, repository rules and demo materials. Team members must review the final changes.
+- **Machine learning inside the product:** the current `agrofarm-analytic` service is a fixed-rule stub, not a trained rainfall model. A trained baseline and its model card are still pending; do not describe model predictions as validated results.
 - **Images, video and audio:** TODO: state "none generated with AI", or list them and add a visible watermark.
 
 ## NASA Data Used
-- **Current Demo Reality (`DEMO_MODE=true` / `ML_MODE=fixture`):** In the live hackathon demo, `core-api` serves deterministic offline snapshots (`cached_demo`) and fixtures that carry `nasa_power` / `insivumeh_daily` / `enso_monthly` provenance metadata while the `agrofarm-analytic` `ml-service` HTTP endpoints (`docs/contract/ml-service-expected.yaml`) are wired in.
-- **Cataloged NASA Earth Observation datasets (`docs/data/datasets.md`, planned pipeline):** NASA POWER (agroclimatology), SMAP L4 (soil moisture), MODIS (MOD13Q1, MOD11A2, MOD15A2H, MOD17A2H), HLS / Sentinel-2, GPM IMERG, ECOSTRESS, and NASADEM.
+- **Current Demo Reality (`DEMO_MODE=true` / `ML_MODE=fixture`):** The demo serves deterministic offline snapshots and fixed-rule fixtures. The NASA POWER connector can clean a downloaded daily CSV into Parquet with a manifest, but the app does not consume or display that dataset yet. Do not claim NASA POWER is active in the demo until the data reaches a visible app feature.
+- **Cataloged NASA Earth Observation datasets (`docs/data/datasets.md`, planned pipeline):** NASA POWER (agroclimatology), SMAP L4 (soil moisture), MODIS (MOD13Q1, MOD11A2, MOD15A2H, MOD17A2H), HLS / Sentinel-2, GPM IMERG, ECOSTRESS, and NASADEM. These are not all integrated into the demo.
 
 ## Space Agency / Partner / Other Data & SI Units Used
 - **NOAA Climate Prediction Center (CPC):** Oceanic Niño Index (ONI) and Relative Oceanic Niño Index (RONI) via the `agrofarm-analytic` ENSO connector (`enso.py`) and cached demo snapshots (`GET /v1/climate/enso`).
@@ -58,6 +58,6 @@ Before submitting on the Space Apps portal, open an **incognito/private browser 
 - [ ] `agrofarm-analytic` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic`)
 - [ ] `agrofarm-frontend` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend`)
 - [ ] `agrofarm-docs` repository: `TODO_PUBLIC_URL` (confirm public visibility: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs`)
-- [ ] Live app URL: `https://agrofarming.site` (confirm accessible without login or with demo credentials `demo@agrofarm.org` / `REMOVED-DEMO-PASSWORD`)
+- [ ] Live app URL: `https://agrofarming.site` (confirm the public demo opens without login; do not include or share credentials)
 - [ ] Demo video link (`<= 30s`): `TODO_PUBLIC_URL` (confirm "Anyone with the link can view", no NASA logos, no minors)
 - [ ] Presentation slides link (max 7 slides): `TODO_PUBLIC_URL` (confirm "Anyone with the link can view", no NASA logos, no minors)

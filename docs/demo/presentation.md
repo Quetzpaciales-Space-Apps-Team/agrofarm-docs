@@ -23,8 +23,8 @@
 ## Slide 3 — Data & Scientific Transparency
 **Title:** Grounded in Open Climate & Local Data
 - **Active in current demo (`DEMO_MODE=true` / `ML_MODE=fixture`):**
-  - `core-api` serves deterministic offline snapshots (`cached_demo`) for ENSO series (`NOAA CPC` sample), scenario yield anomaly simulation, and 3+ rotation comparisons.
-  - `agrofarm-analytic` includes Python connectors for **NOAA CPC (ONI / RONI)** and **INSIVUMEH** daily weather stations (converting `-99.9` sentinels to `null`), ready to wire once HTTP endpoints are exposed via `docs/contract/ml-service-expected.yaml`.
+  - `core-api` serves deterministic offline snapshots (`cached_demo`) for ENSO series (`NOAA CPC` sample), scenario simulation and rotation comparisons. The ML service currently returns fixed-rule stub output, not trained model predictions.
+  - `agrofarm-analytic` has NOAA CPC (ONI / RONI), INSIVUMEH and NASA POWER data connectors. NASA POWER output is not yet consumed or shown in the app.
 - **Cataloged architecture (`docs/data/datasets.md`) for post-hackathon ingestion:** NASA POWER, CHIRPS v3, SMAP L4, MODIS (MOD13Q1, MOD11A2, MOD15A2H, MOD17A2H), HLS / Sentinel-2, SoilGrids 2.0, NASADEM / Copernicus DEM, GPM IMERG, ECOSTRESS.
 - **Strict SI units & hygiene:** `EPSG:4326`, `YYYY-MM-DD`, missing values as `null`/`NaN` (never `-99.9` or `0`), SI units (`mm/day`, `°C`, `%`, `km/h`, `MJ/m²/day`).
 
@@ -45,14 +45,14 @@ Each compared rotation strategy (`>= 3`, including `is_current: true`) displays:
 **Title:** Modular, Contract-First & Offline-Resilient
 - **Frontend (`agrofarm-frontend`):** React 19 + TypeScript + Vite.
 - **Core API (`agrofarm-api`):** FastAPI + PostgreSQL + Alembic migrations + OpenAPI v1 contract tested with Schemathesis.
-- **Analytics & ML (`agrofarm-analytic`):** Python data connectors (NOAA ENSO, INSIVUMEH) and ML scenario/rotation scoring service (`ML_MODE=http|fixture`, plus `DEMO_MODE=true` offline snapshot fallback).
+- **Analytics & ML (`agrofarm-analytic`):** Python data connectors (NOAA ENSO, INSIVUMEH, NASA POWER) and a fixed-rule ML-service stub (`ML_MODE=http|fixture`); a trained crop model is pending. `DEMO_MODE=true` serves offline snapshots.
 - **Offline resilience:** `make seed-demo` + `DEMO_MODE=true` guarantees a working live demo even with zero internet access.
 
 ---
 
 ## Slide 6 — Live Demo Walkthrough (Script)
 **Title:** End-to-End Flow in Under 3 Minutes (or 30s Highlight)
-1. **Register / Login** (`POST /v1/auth/register`, `/v1/auth/login`) — or use seeded `demo@agrofarm.org`.
+1. **Open the public demo without login** (implementation and private-window check pending). Use a private team account only for authenticated API rehearsal; do not publish credentials.
 2. **Create / Draw Farm** (`POST /v1/farms`) — provisional Guatemala City pilot polygon (`EPSG:4326`), `maize -> fallow`.
 3. **Upload Farm Data** (`POST /v1/farms/{id}/uploads`) — validated CSV/GeoJSON with row-level error reporting and SI unit checks.
 4. **Explore ENSO & Simulate Scenario** (`GET /v1/climate/enso`, `POST /v1/scenarios/simulate`) — e.g., El Niño with `-15%` rainfall and `+1.0°C`.

@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-90.455, 14.655],
+            [-90.455, 14.648],
+            [-90.445, 14.648],
+            [-90.445, 14.655],
+            [-90.455, 14.655]
+          ]
+        ]
+      },
+      "properties": {
+        "region_id": "TRAIN-GUA-NE",
+        "name": "Provisional northeast Guatemala City training area",
+        "purpose": "Context area for pilot geospatial data extraction; model target is not decided yet",
+        "area_ha": 83.74,
+        "provisional": true,
+        "boundary_source": "Team-proposed rectangle; training extent needs local confirmation",
+        "notes": "Area is approximate from the supplied ring."
+      }
+    }
+  ]
+}

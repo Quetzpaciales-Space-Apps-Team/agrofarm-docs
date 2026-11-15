@@ -7,15 +7,17 @@
 | Decision-support framing (supports, does not replace farmer/expert) | `POST /v1/farms/{farm_id}/recommendations` returns `disclaimer` + `needs_local_review`; `presentation.md` Slides 1 & 4 | Implemented & tested in `core-api` |
 | Compare at least 3 crop rotation strategies (including current) | `POST /v1/farms/{farm_id}/recommendations` enforces `len(strategies) >= 3` and `any(s.is_current)` in `core_api.domain.recommendations` | Implemented & tested in `core-api` |
 | Each recommendation includes why, evidence, benefits, gaps, risks, uncertainty, priority scores | `POST /v1/farms/{farm_id}/recommendations` schema & `map_and_validate_recommendations` | Implemented & tested in `core-api` |
-| Uses NASA/climate + local farm data + farmer priorities | `GET /v1/climate/enso`, `PUT /v1/farms/{farm_id}/priorities`, `POST /v1/farms/{farm_id}/uploads`, `agrofarm-analytic` connectors (NOAA ENSO, INSIVUMEH) | Implemented (API + connectors) |
+| Uses climate + local farm data + farmer priorities | `GET /v1/climate/enso`, `PUT /v1/farms/{farm_id}/priorities`, `POST /v1/farms/{farm_id}/uploads`, NOAA ENSO and INSIVUMEH connectors | Implemented (API + connectors) |
+| Uses NASA data in a visible app feature | NASA POWER connector and clean dataset manifest | Pending: connector output is not consumed or shown in the app |
 | Farm data upload (CSV/GeoJSON) with column, unit, date, CRS validation | `POST /v1/farms/{farm_id}/uploads` following `docs/data/farm-upload-schema.md` (`DEC-005`) | Implemented & tested in `core-api` |
 | OpenAPI documentation | `agrofarm-api/docs/contract/openapi.yaml` + FastAPI `/docs` and `/openapi.json` | Implemented & Schemathesis-verified |
 | Offline demo resilience (works without internet) | `DEMO_MODE=true` (`DemoMLClient` + `demo_snapshots/*.json`) + `make seed-demo` | Implemented & tested in `core-api` |
 | Presentation in English, max 7 slides, no NASA logos, no minors | `docs/demo/presentation.md` (7 slides + 30s script; `.pptx` export optional if PowerPoint/Slides needed) | Ready in `agrofarm-docs` |
-| Submission form copy in English & public links without login | `docs/demo/submission-form.md` (`DEMO-003`) | Ready in `agrofarm-docs` |
+| Submission form copy in English & public links without login | `docs/demo/submission-form.md` (`DEMO-003`) | Draft ready; public links and no-login access still need verification |
 
 ## 2. Demo Script Coverage Check
-- [x] Register / Login (`POST /v1/auth/register`, `POST /v1/auth/login`, or seeded `demo@agrofarm.org` / `REMOVED-DEMO-PASSWORD`)
+- [x] Register / Login (`POST /v1/auth/register`, `POST /v1/auth/login`) for authenticated testing
+- [ ] Open the public demo without login (required for judging; implementation and private-window check pending)
 - [x] Draw / Create Farm (`POST /v1/farms` with `EPSG:4326` GeoJSON Polygon)
 - [x] Upload Data (`POST /v1/farms/{farm_id}/uploads` using `docs/data/examples/farm-upload-template.csv` or `farm-upload-example.geojson`)
 - [x] Run an ENSO Scenario (`GET /v1/climate/enso` + `POST /v1/scenarios/simulate`)

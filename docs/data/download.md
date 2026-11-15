@@ -54,4 +54,4 @@ Confirmed collection ids: `sentinel-2-l2a`, `modis-13Q1-061`, `modis-11A2-061`, 
 | GGCP10, SPAM 2010 | Their publication pages and `mapspam.info` | Links not verified |
 | FAO GAEZ v5, FAOSTAT | FAO portals | Links not verified |
 | INSIVUMEH 1995 to 2025 | Team Excel file | Upload it to `raw/insivumeh/` in the bucket |
-| Rio Contreras rainfall | Team files | Permission pending (issue DEC-008) |
+| Rio Contreras rainfall | FUNCAGUA and courtesy files from Meteo Tech / FUNCAGUA | Reuse confirmed by the data owner on 2026-11-15; attribute to FUNCAGUA. Source files stay outside Git. |

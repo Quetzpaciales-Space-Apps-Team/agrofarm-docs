@@ -49,7 +49,7 @@ What to know before using it:
 
 ### 3.2 Rio Contreras micro-watershed rainfall
 
-Not reviewed yet. See issues DS-015 and DEC-008.
+Reviewed for DS-015; see the [Rio Contreras rainfall review](../data/rio-contreras-rainfall-review.md). Ingestion is accepted with separate source series, incomplete-row omission, and exclusion of Zona 16 in May-June 2025. FUNCAGUA provided the data and use is permitted with attribution (DEC-008, confirmed by the data owner on 2026-11-15).
 
 ### 3.3 Free datasets
 
@@ -135,7 +135,7 @@ The delivery date is 2026-11-15, one day after this plan was written. The phases
 | What data the farm uploads | DEC-005 |
 | Agronomist contact who reviews the recommendations | DEC-006 |
 | Team roster | DEC-007. Roles in section 5. Owner of the machine learning model pending |
-| Permission to use the Rio Contreras data | DEC-008 |
+| Permission to use the Rio Contreras data | DEC-008 — resolved 2026-11-15; attribute to FUNCAGUA |
 
 **Provisional DEC-003 crop report from `eldmark`:** Arabica coffee under shade, with black beans used as a cover crop during renovation. This describes the reported current system; it does not establish that the model supports coffee or that the crop system has been field-verified.
 
@@ -207,4 +207,3 @@ Rules for every link:
 | AI-generated code is not acknowledged in the repositories | Add an "AI assistance" note to each README | Each repository owner |
 | The slides do not list team name, member names and challenge name | Add them to slide 1 | Demo owner |
 | Demo format not decided: slides, video, or both links in one | Pick one for the "Link to Project Demo" field | Demo owner |
-

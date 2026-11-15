@@ -4,6 +4,10 @@
 - Date: 2026-11-14
 - Deciders: team lead
 
+Site selection update: [ADR 0006](0006-ceda-usac-pilot-site.md) selects CEDA/USAC,
+zone 12. Exact parcel boundaries and current crops remain pending. The original
+site-selection context below is historical.
+
 ## Context
 
 Most of the new challenge resources cover only the United States. The team's own data (INSIVUMEH, Rio Contreras) is from Guatemala. The challenge text also mentions a "controlled environment", which could mean scenario simulation or a greenhouse. The hackathon delivery date is 2026-11-15.

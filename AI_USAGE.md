@@ -11,6 +11,7 @@ AI coding assistants were used as tools to write and review code, tests, CI work
 | Tool | Model | Used by | Used for |
 |---|---|---|---|
 | OpenAI Codex | `gpt-6.1-sol` | `JorgeVilledaS` | Correct demo rotation examples to match the engine, remove the unsupported sorghum sequence and identify the baseline as an example. Human review pending. |
+| OpenAI Codex | `gpt-6.1-sol` | `JorgeVilledaS` | Record Jorge Villeda's CEDA/USAC pilot-site confirmation, distinguish it from provisional examples and historical studies, and check documentation consistency. Human review of the text pending. |
 | Claude Code | `claude-fable-5-2` | `eldmark` | Repository rules, CI, scaffolds, connectors, tests, documentation, data analysis |
 | OpenAI Codex | `gpt-6.1-sol` | `eldmark` | CEDA historical source research, provisional maize and bean yield transcription, provenance manifests and evidence documentation; numbers checked against the source pages by Claude Code and then reviewed by `eldmark` on 2026-11-14 |
 | OpenAI Codex | `GPT-6` | `eldmark` | Dataset ownership handoff, provisional geometry formatting and area checks, demo credential removal, model-status corrections and submission documentation |

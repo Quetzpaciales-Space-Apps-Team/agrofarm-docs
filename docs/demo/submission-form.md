@@ -29,7 +29,7 @@ Yes. AI tools were used to accelerate implementation and documentation; `TODO_TE
 
 - **Code:** AI coding assistants (Claude Code, OpenAI Codex, Antigravity) assisted with backend/frontend scaffolding, tests, CI workflows, and OpenAPI contracts. Team members should confirm their individual tools before submission.
 - **Documentation:** AI assistants helped draft or refine the project plan, dataset catalog, repository rules, and demo/submission materials (reviewed by team members).
-- **Machine learning inside the product:** `agrofarm-analytic/services/ml` includes `lightgbm>=4.7.0` in its dependencies, while the active `/v1/simulate` and `/v1/rotations/score` endpoints currently run a deterministic fixed-rule stub (`agrofarm_ml.stub`), not a trained rainfall model yet; do not describe outputs as validated ML predictions.
+- **Machine learning inside the product:** the active `/v1/simulate` and `/v1/rotations/score` endpoints run declared fixed rules and a rule engine over a provisional crop traits table, not a trained model; do not describe outputs as validated ML predictions. One model was trained as an experiment (seasonal peak NDVI on cropland from MODIS, LightGBM). It missed the skill rule set before training (error 4.4 % lower than climatology, 5 % needed) and is reported only as an annex result, not used by the app: see [the annex](../model/ndvi-experimental-result.md).
 - **Images, video and audio:** `TODO_TEAM_CONFIRM`: state "none generated with AI", or list any generated assets and add a visible watermark.
 
 ## NASA Data Used

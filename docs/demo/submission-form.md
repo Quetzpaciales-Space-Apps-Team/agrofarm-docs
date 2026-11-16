@@ -11,17 +11,17 @@
 AgroFarm is a decision-support prototype for smallholder farmers and local agronomists. It displays historical NASA POWER and NOAA CPC ENSO indicators, runs live climate-scenario and rotation-comparison services (`>= 3` strategies including the farm's current rotation), and presents the rationale, evidence, benefits, information gaps, risks, uncertainty bounds, and local-review disclaimer for every recommendation.
 
 ## Link to Demo
-- **Primary Live Demo URL (no login required — click `"Try the demo"`):** `https://agrofarming.site`
-- **Backup Cloud Run URL:** `https://frontend-staging-7l2bzjrqpq-uc.a.run.app`
+- **Primary Live Demo URL (no login required — click `"Try the demo"`):** `https://frontend-staging-7l2bzjrqpq-uc.a.run.app` (verified)
+- **Custom domain:** `https://agrofarming.site` answered with the same app on 2026-11-15, but it was reported as not configured; not confirmed, so do not list it unless the team confirms it.
 
 ## Link to Final Project
 - **Demo Video (`<= 30s`):** `TODO_PUBLIC_URL`
 - **Presentation Slides (`<= 7` slides):** `TODO_PUBLIC_URL`
-- **Public Repositories (`G12` — confirm all 4 are set to PUBLIC before submission):**
-  - `agrofarm-api`: `TODO_PUBLIC_URL` (`https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api`)
-  - `agrofarm-analytic`: `TODO_PUBLIC_URL` (`https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic`)
-  - `agrofarm-frontend`: `TODO_PUBLIC_URL` (`https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend`)
-  - `agrofarm-docs`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs` (confirmed PUBLIC)
+- **Public Repositories (`G12` — all 4 verified PUBLIC on 2026-11-15):**
+  - `agrofarm-api`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api` (PUBLIC)
+  - `agrofarm-analytic`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic` (PUBLIC)
+  - `agrofarm-frontend`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend` (PUBLIC)
+  - `agrofarm-docs`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs` (PUBLIC)
 
 ## Detailed Description
 Smallholder farmers in Guatemala face increasing rainfall variability and El Niño / La Niña (ENSO) extremes, yet most agricultural tools either hide assumptions in black-box scores or ignore the farmer's own water, equipment, and income constraints.
@@ -69,10 +69,17 @@ Yes. AI coding assistants were used to accelerate implementation and documentati
 
 Before submitting on the Space Apps portal, open an **incognito/private browser window** and verify every link loads without authentication:
 
-- [ ] `agrofarm-api` repository: `TODO_PUBLIC_URL` (set visibility to PUBLIC: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api`)
-- [ ] `agrofarm-analytic` repository: `TODO_PUBLIC_URL` (set visibility to PUBLIC: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic`)
-- [ ] `agrofarm-frontend` repository: `TODO_PUBLIC_URL` (set visibility to PUBLIC: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend`)
-- [x] `agrofarm-docs` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs` (confirmed PUBLIC)
-- [ ] Live app URL: `https://agrofarming.site` (backup: `https://frontend-staging-7l2bzjrqpq-uc.a.run.app`; verify `"Try the demo"` in incognito without login)
+- [x] `agrofarm-api` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api` (PUBLIC; answered HTTP 200 without login on 2026-11-15, still open it once in a private window)
+- [x] `agrofarm-analytic` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic` (PUBLIC; answered HTTP 200 without login on 2026-11-15, still open it once in a private window)
+- [x] `agrofarm-frontend` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend` (PUBLIC; answered HTTP 200 without login on 2026-11-15, still open it once in a private window)
+- [x] `agrofarm-docs` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs` (PUBLIC)
+- [ ] Live app URL: `https://frontend-staging-7l2bzjrqpq-uc.a.run.app` (verify `"Try the demo"` in incognito without login)
 - [ ] Demo video link (`<= 30s`): `TODO_PUBLIC_URL` (confirm `"Anyone with the link can view"`, no NASA logos, no minors)
 - [ ] Presentation slides link (max 7 slides): `TODO_PUBLIC_URL` (confirm `"Anyone with the link can view"`, no NASA logos, no minors)
+
+## Still to do by a human
+
+1. Fill every `TODO_TEAM_CONFIRM` (ideas not AI-generated; AI media status) and the two remaining `TODO_PUBLIC_URL` (the demo video link and the slides link). The repository URLs are already filled in.
+2. Produce slides (max 7) or a video (max 30 s) and share them with an open link ("Anyone with the link can view").
+3. Each team member adds the AI tools they used to the `AI_USAGE.md` of each repository.
+4. Click "Submit for Judging" on the Space Apps portal before 2026-11-15 23:59 (Guatemala time).

@@ -19,7 +19,8 @@ AI coding assistants were used as tools to write and review code, tests, CI work
 | OpenAI Codex | `gpt-6.1-sol` | `eldmark` | CEDA historical source research, provisional maize and bean yield transcription, provenance manifests and evidence documentation; numbers checked against the source pages by Claude Code and then reviewed by `eldmark` on 2026-11-14 |
 | OpenAI Codex | `GPT-6` | `eldmark` | Dataset ownership handoff, provisional geometry formatting and area checks, demo credential removal, model-status corrections and submission documentation |
 | OpenAI Codex | `GPT-6` | `jdivass` | Local review of Rio Contreras rainfall files and an AI-assisted draft of the DS-015 data review note |
-| Antigravity | `Gemini 4 Hydrogen` | `MarceloDetlefsen` | Submission form updates, presentation alignment, challenge delivery checklist, 30s video script, and demo progress tracking (human-reviewed by `@MarceloDetlefsen`) |
+| Antigravity | `Gemini 4 Hydrogen` | `MarceloDetlefsen` | Presentation alignment, challenge delivery checklist, 30s video script, and demo progress tracking (human-reviewed by `@MarceloDetlefsen`) |
+| Antigravity | `Gemini 3.8` | `Angel Chavez (angcoder-c)` | Architecture and deployment documentation, presentation alignment, demo progress tracking |
 
 Team members who used another tool add a row here in their next pull request (rule G11.3).
 

@@ -22,6 +22,8 @@ AI coding assistants were used as tools to write and review code, tests, CI work
 | OpenAI Codex | `GPT-6` | `jdivass` | Local review of Rio Contreras rainfall files and an AI-assisted draft of the DS-015 data review note |
 | Antigravity | `Gemini 4 Hydrogen` | `MarceloDetlefsen` | Presentation alignment, challenge delivery checklist, 30s video script, and demo progress tracking (human-reviewed by `@MarceloDetlefsen`) |
 | Antigravity | `Gemini 3.8` | `Angel Chavez (angcoder-c)` | Architecture and deployment documentation, presentation alignment, demo progress tracking |
+| Claude & Remotion | `claude-sonnet-5-5` | `Angel Chavez (angcoder-c)` | 30-second demo video rendering, audio track synchronization, and timeline alignment |
+| ChatGPT / DALL-E 3 | `DALL-E 3` | `Quetzpaciales Team` | Team avatar/logo generation (labeled with visible "AI-Generated" watermark per Space Apps rules) |
 
 Team members who used another tool add a row here in their next pull request (rule G11.3).
 

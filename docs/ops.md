@@ -116,3 +116,16 @@ Required external accounts:
     --region=us-central1 \
     --to-revisions=<previous-revision>=100
   ```
+
+## 6. CI/CD and branches
+
+Verified on 2026-11-15 and 2026-11-16 with `gh`:
+
+- **Failed runs while private.** On 2026-11-16 02:10 UTC the `ci` and CD workflows of `agrofarm-api` and `agrofarm-analytic` failed with GitHub's annotation "The job was not started because recent account payments have failed or your spending limit needs to be increased". No job ran. The repositories were private at that time. After they became public, the runs were re-run and passed: staging deployed and production was skipped.
+- **Branches.** Only `main` and `develop` exist in all four repositories. Feature branches were deleted on 2026-11-15 after their pull requests merged. (Open `docs/final-update` pull request branches are the exception while they wait for review.)
+- **Production deploys.** A push to `main` in `agrofarm-frontend`, `agrofarm-api` and `agrofarm-analytic` deploys to production Cloud Run without required reviewers. Production had never been deployed before 2026-11-16. This differs from the manual approval described in section 5 and in rule G3. `main` of the four repositories is synced from `develop` by a pull request at the end of 2026-11-15. The result of that sync is not confirmed in this document.
+- **Pending, needs GCP access, not done:**
+  1. `terraform apply` for `ml_min_instances=1` on staging.
+  2. Upload of the model artifacts to the staging `models` bucket.
+  3. Earthdata credentials in Secret Manager (section 3).
+- **Not confirmed:** the state of `agrofarming.site` (see [`demo/PROGRESS.md`](demo/PROGRESS.md)) and any GitHub spending-limit or billing change.

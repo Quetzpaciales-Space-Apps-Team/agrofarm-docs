@@ -1,6 +1,8 @@
 # Project plan: crop and rotation simulator
 
-English version of the team work plan dated 2026-11-14. The tasks are tracked as GitHub issues in the four repositories. This document explains how they fit together.
+English version of the team work plan dated 2026-11-14.
+
+**Hackathon delivery date: 2026-11-15.** **The demo is today, 2026-11-15, at 18:00 (Guatemala time).** **Pilot region: Guatemala** (see [ADR 0002](../adr/0002-pilot-region-and-controlled-environment.md)). The tasks are tracked as GitHub issues in the four repositories. This document explains how they fit together.
 
 ## 1. Summary
 
@@ -47,7 +49,7 @@ What to know before using it:
 
 ### 3.2 Rio Contreras micro-watershed rainfall
 
-Not reviewed yet. See issues DS-015 and DEC-008.
+Reviewed for DS-015; see the [Rio Contreras rainfall review](../data/rio-contreras-rainfall-review.md). Ingestion is accepted with separate source series, incomplete-row omission, and exclusion of Zona 16 in May-June 2025. FUNCAGUA provided the data and use is permitted with attribution (DEC-008, confirmed by the data owner on 2026-11-15).
 
 ### 3.3 Free datasets
 
@@ -68,16 +70,17 @@ See the [dataset catalog](../data/datasets.md). No source has crop yield per par
 
 ## 5. Team roles
 
-Names and GitHub users are pending (issue DEC-007).
+Roles agreed on 2026-11-14. The "Person 1 to 6" labels used in the issues map to these owners.
 
-| Person | Role | Main delivery | Repository |
+| Area | Owner (GitHub user) | Covers | Repository |
 |---|---|---|---|
-| 1 | Climate and rainfall | Clean climate, climate indicators and ENSO, ready for the model | `agrofarm-analytic` (`data-service`) |
-| 2 | Satellite and soil | Soil moisture and vegetation series, soil and terrain for the area and the farm | `agrofarm-analytic` (`data-service`) |
-| 3 | Machine learning model | Saved model with uncertainty and a scenario function | `agrofarm-analytic` (`ml-service`) |
-| 4 | Agronomy and rotations | Crop table, rules and sheets for at least three strategies | `agrofarm-analytic`, `agrofarm-docs` |
-| 5 | Maps and UI | Web app with maps, timeline, scenarios and comparison | `agrofarm-frontend` |
-| 6 | Backend, integration and demo | API, farm data upload, deployment and presentation | `agrofarm-api`, `agrofarm-docs` |
+| Backend | `MarceloDetlefsen` | Person 6: API, auth, farms, uploads, search | `agrofarm-api` |
+| Frontend | `MagicBag-tab` | Person 5: maps, timeline, scenarios, comparison | `agrofarm-frontend` |
+| Recommendation algorithm | `JorgeVilledaS` | Person 4: crop traits, rotation rules, strategy sheets | `agrofarm-analytic` (`ml-service`), `agrofarm-docs` |
+| Data analysis | `eldmark` (Person 2, first), then `jdivass` (Person 1 after Person 2's phase) | Person 2: satellite, soil and terrain; Person 1: climate, rainfall and ENSO | `agrofarm-analytic` (`data-service`) |
+| Infrastructure and DevOps | `angcoder-c` | CI/CD, Docker, GCP, branch settings | all four |
+
+**Open point:** nobody owns the machine learning model yet (Person 3: label decision, feature pipeline, baseline model, uncertainty). It must be assigned to the data analysis pair or to the recommendation owner (issue DEC-007).
 
 ## 6. Handoffs that block other people
 
@@ -95,7 +98,7 @@ If one of these is late, say so the same day.
 
 ## 7. Phases and checkpoints
 
-Dates are pending (issue DEC-001). Each phase is a GitHub milestone with the same name in every repository.
+The delivery date is 2026-11-15, one day after this plan was written. The phases below are an order of work, not calendar blocks: with one day left, only `priority:core` work is realistic and the team must pick the subset it will actually build (issue DEC-001). Each phase is a GitHub milestone with the same name in every repository.
 
 | Phase | What is achieved | Leads | Checkpoint |
 |---|---|---|---|
@@ -125,11 +128,82 @@ Dates are pending (issue DEC-001). Each phase is a GitHub milestone with the sam
 
 | Decision | Issue |
 |---|---|
-| Hackathon delivery date and demo time | DEC-001 |
-| Pilot region, and what to do with US-only challenge datasets | DEC-002 |
-| Exact farm polygon and the crops grown today | DEC-003 |
-| "Controlled environment": scenario simulation or greenhouse | DEC-004 |
+| Hackathon delivery date and demo time | DEC-001. Decided: demo on 2026-11-15 at 18:00, Guatemala time. Submit before 2026-11-15 23:59, local time of the team's Local Event (section 10). The phases are an order of work, not calendar blocks, and the scope for the day is `priority:core` work (see the schedule below) |
+| Pilot region, and what to do with US-only challenge datasets | DEC-002. Decided: Guatemala, ADR 0002 |
+| Exact farm polygon and the crops grown today | DEC-003. CEDA/USAC, zone 12, selected by team confirmation reported by `JorgeVilledaS`; see [ADR 0006](../adr/0006-ceda-usac-pilot-site.md). Exact parcel boundary (Person 2), current crops and seasonal management remain pending. The Canalitos fixtures are not the selected pilot geometry. |
+| "Controlled environment": scenario simulation or greenhouse | DEC-004. Decided: scenario simulation for Guatemala, ADR 0002 |
 | What data the farm uploads | DEC-005 |
 | Agronomist contact who reviews the recommendations | DEC-006 |
-| Team roster | DEC-007 |
-| Permission to use the Rio Contreras data | DEC-008 |
+| Team roster | DEC-007. Roles in section 5. Owner of the machine learning model pending |
+| Permission to use the Rio Contreras data | DEC-008 — resolved 2026-11-15; attribute to FUNCAGUA |
+
+**DEC-003 site confirmation, 2026-11-15:** Jorge Villeda (`JorgeVilledaS`) reports confirmation with `eldmark` that the selected parcel is CEDA/USAC, zone 12. The earlier Canalitos report of shaded Arabica coffee with black beans during renovation does not describe confirmed crops at CEDA. Current crops and seasonal management still need confirmation; historical CEDA studies do not supply the current inventory.
+
+## 10. Submission requirements (NASA Space Apps)
+
+Source: the official [Project Submission Guide](https://www.spaceappschallenge.org/resources/project-submission-guide/), read on 2026-11-14. The form copy lives in [`docs/demo/submission-form.md`](../demo/submission-form.md).
+
+### 10.1 Deadline
+
+- Submission opened on Saturday 2026-11-14 at 09:00. It closes on **Sunday 2026-11-15 at 23:59**, in the time zone of the team's Local Event.
+- Someone must click **"Submit for Judging"** before the deadline. A project that is only saved, or saved after the deadline, is not judged and gives no participant certificate.
+- The project can be edited and resubmitted until the deadline. Only the last saved submission is judged. Submit early, then improve.
+- The Local Event may have its own judging times. Ask the Local Lead (not verified yet).
+
+### 10.2 Conditions to be judged
+
+| Requirement | Our status |
+|---|---|
+| Every team member is a confirmed participant of the same Local Event | Not verified |
+| Every required field of the project form is filled | Draft in `submission-form.md`. The SI field was missing (section 10.4) |
+| Everything in the form and in linked material is in English | Rule G1 already asks for this |
+| The "Terms and Conditions" and "Confirm All Work is Original" boxes are checked | At submission |
+| No image, video, audio or likeness of a person under 18 | To check on the slides and screenshots |
+| No NASA logo, flag or mission identifier in generated content | To check on the slides |
+
+### 10.3 Form fields
+
+| Field | What it asks |
+|---|---|
+| Project Name | The name |
+| High-Level Project Summary | What we built, how it answers the challenge, why it matters |
+| Link to Project Demo | A slide deck of **at most 7 slides** (title and intro slides count) **or** a video of **at most 30 seconds**. Over the limit means not eligible for Global Judging |
+| Link to Final Project | A public link to the project: site, repository or hosting service |
+| Detailed Project Description | What it does, how it works, benefits, goals, tools, languages, hardware and software |
+| Use of Super Intelligence (SI) | Whether SI (AI) tools were used and how (section 10.4) |
+| NASA Data | Which NASA data and resources we used, in detail. **At least one is required for a Global Award** |
+| Space Agency Partner Data and Other References | Every dataset, resource and tool used, including code, text and images, even when open source |
+
+Rules for the demo:
+
+- Slides must be in English. A video may be spoken in another language only with English subtitles.
+- The slides must show the team name, the names of the team members and the challenge we selected. They should show an image of the project, the user experience, and how NASA and partner agency data make the solution possible.
+- The demo is hosted outside the Space Apps site. Images (JPG, PNG, GIF up to 10 MB) can be uploaded to the project page. Videos and documents cannot.
+
+Rules for every link:
+
+- **No password, no permission request and no registration.** If the judges cannot open a link, the project is not evaluated.
+- Test every link in a private browser window before submitting.
+- For a new website, the guide recommends (does not require) asking for a FortiGuard Web Filter Classification so the judges' network does not block it.
+
+### 10.4 Use of AI ("Super Intelligence")
+
+"SI" in the form means AI tools (machine learning, chatbots, image generation, large language models). It does not mean the International System of Units.
+
+- AI tools are allowed as a tool. They must not be the source of the idea for the solution.
+- We must say where and how they were used:
+  - Images and videos made with AI carry a visible watermark.
+  - Audio, code and data made with AI are acknowledged in descriptive text and metadata.
+- The answer in the form is not shown to the judges. The marks inside the project (watermarks, text, metadata) are.
+
+### 10.5 Gaps found on 2026-11-14
+
+| Gap | What to do | Owner |
+|---|---|---|
+| The four repositories are private, so the repository links fail for the judges | Make public the ones we link, or link only a public site. Check first that no secret and no data without a clear license is in the history (the INSIVUMEH file is marked preliminary and is not in git) | Infrastructure, with a team decision |
+| The live app link is described with demo credentials. A link "should not require a password" | Give the judges a page that opens without login (public demo mode or a landing page with the demo), and keep login optional | Backend, frontend |
+| NASA data is only named in fixture metadata. No connector reads NASA data yet | Build the NASA POWER connector on the series already downloaded (`data/raw/nasa_power`) and show it in the app. This is the fastest real use of NASA data | Data analysis |
+| The SI field was read as SI units | Draft added to `submission-form.md`. Every member adds the AI tools they used | Everyone |
+| AI-generated code is not acknowledged in the repositories | Add an "AI assistance" note to each README | Each repository owner |
+| The slides do not list team name, member names and challenge name | Add them to slide 1 | Demo owner |
+| Demo format not decided: slides, video, or both links in one | Pick one for the "Link to Project Demo" field | Demo owner |

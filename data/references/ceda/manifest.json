@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "ceda-historical-literature-references",
+  "version": "0.1.0",
+  "generated_by": "OpenAI Codex (gpt-6.1-sol)",
+  "reviewed_by": "eldmark",
+  "status": "literature_transcription_reviewed_by_a_team_member",
+  "source_catalog": "sources.json",
+  "record_count": 22,
+  "yield_unit": "kg/ha",
+  "geometry": null,
+  "eligible_for_spatial_training": false,
+  "limitations": [
+    "Publication year is not a field observation date.",
+    "No experimental plot boundaries have been georeferenced.",
+    "Treatment means and cultivar summaries are not pixel labels or independent farm seasons.",
+    "No verified 2002 or 2022 experimental record is included.",
+    "The 2017 source concerns essential oils, not maize or bean harvest."
+  ],
+  "artifacts": [
+    {
+      "path": "sources.json",
+      "sha256": "b6d6e0d6f730e5535328ee3c692c8fa0c93b8bcaa282bde1b9aeb5cd4dfb59a5",
+      "bytes": 2831
+    },
+    {
+      "path": "yield-references.csv",
+      "sha256": "28c1edc5c11a9a24a9119c045daa3a7a3e94aaf62ad84000cd7d6db58c4725c0",
+      "bytes": 2639
+    }
+  ],
+  "machine_verification": {
+    "by": "Claude Code (claude-fable-5-2)",
+    "on": "2026-11-14",
+    "method": "Original PDFs checked with pdftotext against the cited pages; PDF hashes match sources.json.",
+    "result": "All 20 maize treatment means match Table 3 (PDF page 46, printed page 34). Both bean yields match Table 6 (printed page 78) and the calculation table (PDF page 146); sowing date 2 July 2010 matches Table 9 (printed page 82). No differences found.",
+    "not_checked": [
+      "Maize trial dates and location (the PDF only cites CEDA, FAUSAC, 2006)",
+      "Potato yields (not transcribed)",
+      "Whether the bean values were measured per plant and scaled by density (they were: 44.86 g and 40.30 g per plant at 71,428.57 plants per ha)"
+    ]
+  },
+  "reviewed_on": "2026-11-14"
+}

@@ -1,0 +1,23 @@
+record_id,source_id,crop,treatment_id,cultivar,sowing_date,harvest_date,yield_kg_ha,observation_level,source_locator,eligible_for_spatial_training
+CEDA-MAIZE-T01,USAC-CEDA-MAIZE-2008,maize,1,Platino,,,1888.8,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T02,USAC-CEDA-MAIZE-2008,maize,2,Agriguase RB-03,,,2359.2,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T03,USAC-CEDA-MAIZE-2008,maize,3,ECB-5372,,,3156.1,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T04,USAC-CEDA-MAIZE-2008,maize,4,ECB-5399,,,4705.6,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T05,USAC-CEDA-MAIZE-2008,maize,5,HB-83,,,2938.6,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T06,USAC-CEDA-MAIZE-2008,maize,6,HEBQ05-01,,,3904.8,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T07,USAC-CEDA-MAIZE-2008,maize,7,JC-24,,,5451.6,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T08,USAC-CEDA-MAIZE-2008,maize,8,H-520,,,2888.7,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T09,USAC-CEDA-MAIZE-2008,maize,9,HE-INIFAP-1,,,2587.5,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T10,USAC-CEDA-MAIZE-2008,maize,10,PIONEER 30F32,,,3025.4,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T11,USAC-CEDA-MAIZE-2008,maize,11,PIONEER 30F83,,,2140.1,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T12,USAC-CEDA-MAIZE-2008,maize,12,PIONEER 30F96,,,1382.6,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T13,USAC-CEDA-MAIZE-2008,maize,13,MD9975,,,2659.8,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T14,USAC-CEDA-MAIZE-2008,maize,14,MD9978,,,2111.2,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T15,USAC-CEDA-MAIZE-2008,maize,15,MC9971,,,2826.5,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T16,USAC-CEDA-MAIZE-2008,maize,16,SKB-232,,,1148.9,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T17,USAC-CEDA-MAIZE-2008,maize,17,SKB-233,,,871,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T18,USAC-CEDA-MAIZE-2008,maize,18,SKB-504,,,2733.5,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T19,USAC-CEDA-MAIZE-2008,maize,19,DICTA 398,,,1619.8,treatment_mean,Table 3; printed page 34,false
+CEDA-MAIZE-T20,USAC-CEDA-MAIZE-2008,maize,20,TESTIGO LOCAL,,,2416.3,treatment_mean,Table 3; printed page 34,false
+CEDA-BEAN-PURPLE,USAC-CEDA-BEAN-2011,common_bean,,Purple-pod cultivar,2010-07-02,,3204.29,cultivar_summary,Printed page 78; Table 9 on page 82,false
+CEDA-BEAN-OSTUA,USAC-CEDA-BEAN-2011,common_bean,,ICTA OSTUA,2010-07-02,,2878.57,cultivar_summary,Printed page 78; Table 9 on page 82,false

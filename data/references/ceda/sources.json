@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "OpenAI Codex (gpt-6.1-sol)",
+  "reviewed_by": "eldmark",
+  "sources": [
+    {
+      "source_id": "USAC-CEDA-MAIZE-2008",
+      "title_en": "White maize hybrid evaluation",
+      "publication_year": 2008,
+      "crop": "maize",
+      "url": "https://biblioteca.usac.edu.gt/tesis/01/01_2399.pdf",
+      "local_pdf": "data/raw/ceda-literature/maize-2008.pdf",
+      "sha256": "b1823951362760327f90518d4e63acdc407cbe672d3731f5631efd3cbbb41e6a",
+      "bytes": 494557,
+      "notes": "Historical treatment means; field dates and plot georeferencing unresolved.",
+      "accessed_on": "2026-11-14",
+      "rights_status": "No reuse license confirmed; source PDF kept outside version control."
+    },
+    {
+      "source_id": "USAC-CEDA-BEAN-2011",
+      "title_en": "Purple-pod bean characterization and CEDA assessment",
+      "publication_year": 2011,
+      "crop": "common_bean",
+      "url": "https://biblioteca.usac.edu.gt/tesis/01/01_2623.pdf",
+      "local_pdf": "data/raw/ceda-literature/bean-2011.pdf",
+      "sha256": "f8cdcd4676b64ea267898faecd4452d362cba519e66c674b36e0d1d54660bdd1",
+      "bytes": 4290100,
+      "notes": "Sowing date 2010-07-02 in Table 9; yield references, not polygon labels.",
+      "accessed_on": "2026-11-14",
+      "rights_status": "No reuse license confirmed; source PDF kept outside version control."
+    },
+    {
+      "source_id": "USAC-CEDA-POTATO-2011",
+      "title_en": "Potato seed production under protected systems",
+      "publication_year": 2011,
+      "crop": "potato",
+      "url": "https://biblioteca.usac.edu.gt/tesis/01/01_2692.pdf",
+      "local_pdf": "data/raw/ceda-literature/potato-2011.pdf",
+      "sha256": "5ccd5aa73d64c8c5c2a2d47e93bf214c6c1e1b9a4203ec0b8d834bb415c50beb",
+      "bytes": 6337734,
+      "notes": "Experiment November 2010 to April 2011; protected cultivation; yield table not transcribed.",
+      "accessed_on": "2026-11-14",
+      "rights_status": "No reuse license confirmed; source PDF kept outside version control."
+    },
+    {
+      "source_id": "USAC-CEDA-LIPPIA-2017",
+      "title_en": "Larvicidal activity of Lippia essential oils",
+      "publication_year": 2017,
+      "crop": "lippia_alba",
+      "url": "https://edc-ccqqfar.usac.edu.gt/wp-content/uploads/2018/05/revista-cientifica-2017-IIQB.pdf",
+      "local_pdf": "data/raw/ceda-literature/lippia-2017.pdf",
+      "sha256": "01e54499eb61966bd7c9b9ccca77a64eee708ee8ebc4146c1ac9630373c6b101",
+      "bytes": 4258944,
+      "notes": "CEDA foliage collection evidence; oil extraction yield is not crop grain yield; no yield labels extracted.",
+      "accessed_on": "2026-11-14",
+      "rights_status": "Attribution-based reproduction statement in journal front matter; not a standardized open license."
+    }
+  ],
+  "reviewed_on": "2026-11-14"
+}

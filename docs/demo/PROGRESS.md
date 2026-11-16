@@ -42,7 +42,7 @@ Feature pull requests of the three code repositories merged into `develop`. Each
 
 ## Still to do by a human
 
-1. **Fill the placeholders** in `docs/demo/submission-form.md`: every `TODO_TEAM_CONFIRM` (ideas not AI-generated; AI media status) and every `TODO_PUBLIC_URL` (video, slides; the repository URLs are now public and can be written in place).
+1. **Fill the placeholders** in `docs/demo/submission-form.md`: every `TODO_TEAM_CONFIRM` (ideas not AI-generated; AI media status) and the two remaining `TODO_PUBLIC_URL` (the video link and the slides link). The repository URLs are filled in and answered HTTP 200 without login on 2026-11-15.
 2. **Slides (max 7) or a video (max 30 s):** produce at least one from `presentation.md` or `video-script.md`, share it with "Anyone with the link can view", and put the link in the form.
 3. **AI use:** each team member adds the AI tools they used to the `AI_USAGE.md` of each repository.
 4. **Incognito walkthrough (`DEMO-002`)** on the staging URL, then close `agrofarm-docs` #18.

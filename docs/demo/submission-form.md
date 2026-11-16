@@ -18,9 +18,9 @@ AgroFarm is a decision-support prototype for smallholder farmers and local agron
 - **Demo Video (`<= 30s`):** `TODO_PUBLIC_URL`
 - **Presentation Slides (`<= 7` slides):** `TODO_PUBLIC_URL`
 - **Public Repositories (`G12` — all 4 verified PUBLIC on 2026-11-15):**
-  - `agrofarm-api`: `TODO_PUBLIC_URL` (`https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api`)
-  - `agrofarm-analytic`: `TODO_PUBLIC_URL` (`https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic`)
-  - `agrofarm-frontend`: `TODO_PUBLIC_URL` (`https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend`)
+  - `agrofarm-api`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api` (PUBLIC)
+  - `agrofarm-analytic`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic` (PUBLIC)
+  - `agrofarm-frontend`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend` (PUBLIC)
   - `agrofarm-docs`: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs` (PUBLIC)
 
 ## Detailed Description
@@ -69,9 +69,9 @@ Yes. AI coding assistants were used to accelerate implementation and documentati
 
 Before submitting on the Space Apps portal, open an **incognito/private browser window** and verify every link loads without authentication:
 
-- [ ] `agrofarm-api` repository: `TODO_PUBLIC_URL` (now PUBLIC, the team replaces the placeholder with the URL: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api`)
-- [ ] `agrofarm-analytic` repository: `TODO_PUBLIC_URL` (now PUBLIC, the team replaces the placeholder with the URL: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic`)
-- [ ] `agrofarm-frontend` repository: `TODO_PUBLIC_URL` (now PUBLIC, the team replaces the placeholder with the URL: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend`)
+- [x] `agrofarm-api` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-api` (PUBLIC; answered HTTP 200 without login on 2026-11-15, still open it once in a private window)
+- [x] `agrofarm-analytic` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-analytic` (PUBLIC; answered HTTP 200 without login on 2026-11-15, still open it once in a private window)
+- [x] `agrofarm-frontend` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-frontend` (PUBLIC; answered HTTP 200 without login on 2026-11-15, still open it once in a private window)
 - [x] `agrofarm-docs` repository: `https://github.com/Quetzpaciales-Space-Apps-Team/agrofarm-docs` (PUBLIC)
 - [ ] Live app URL: `https://frontend-staging-7l2bzjrqpq-uc.a.run.app` (verify `"Try the demo"` in incognito without login)
 - [ ] Demo video link (`<= 30s`): `TODO_PUBLIC_URL` (confirm `"Anyone with the link can view"`, no NASA logos, no minors)
@@ -79,7 +79,7 @@ Before submitting on the Space Apps portal, open an **incognito/private browser 
 
 ## Still to do by a human
 
-1. Fill every `TODO_TEAM_CONFIRM` (ideas not AI-generated; AI media status) and every `TODO_PUBLIC_URL`.
+1. Fill every `TODO_TEAM_CONFIRM` (ideas not AI-generated; AI media status) and the two remaining `TODO_PUBLIC_URL` (the demo video link and the slides link). The repository URLs are already filled in.
 2. Produce slides (max 7) or a video (max 30 s) and share them with an open link ("Anyone with the link can view").
 3. Each team member adds the AI tools they used to the `AI_USAGE.md` of each repository.
 4. Click "Submit for Judging" on the Space Apps portal before 2026-11-15 23:59 (Guatemala time).
